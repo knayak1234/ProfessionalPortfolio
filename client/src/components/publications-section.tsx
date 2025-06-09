@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Users, Award, ExternalLink, Globe, Presentation, Calendar } from "lucide-react";
+import { BookOpen, Users, Award, ExternalLink, Globe, Presentation, Calendar, GraduationCap } from "lucide-react";
 
 export default function PublicationsSection() {
   const publicationStats = [
@@ -169,14 +169,14 @@ export default function PublicationsSection() {
         <div className="mb-16 fade-in">
           <h3 className="text-2xl font-semibold text-foreground mb-8 font-serif text-center">Research Profiles</h3>
           
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.open('https://orcid.org/0000-0000-0000-0000', '_blank')}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.open('https://orcid.org/0000-0003-1942-317X', '_blank')}>
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <ExternalLink className="w-6 h-6 text-green-600" />
                 </div>
                 <h4 className="font-semibold text-foreground mb-2">ORCID</h4>
-                <p className="text-sm text-muted-foreground">0000-0000-0000-0000</p>
+                <p className="text-xs text-muted-foreground">0000-0003-1942-317X</p>
               </CardContent>
             </Card>
             
@@ -190,13 +190,23 @@ export default function PublicationsSection() {
               </CardContent>
             </Card>
             
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.open('https://scholar.google.com/citations?user=AUTHOR_ID', '_blank')}>
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.open('https://scholar.google.com/citations?hl=en&user=ow_EdYoAAAAJ&view_op=list_works&sortby=pubdate', '_blank')}>
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="w-6 h-6 text-orange-600" />
                 </div>
                 <h4 className="font-semibold text-foreground mb-2">Google Scholar</h4>
                 <p className="text-sm text-muted-foreground">Citations</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.open('https://vidwan.inflibnet.ac.in/myprofile', '_blank')}>
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <GraduationCap className="w-6 h-6 text-purple-600" />
+                </div>
+                <h4 className="font-semibold text-foreground mb-2">Vidwan</h4>
+                <p className="text-sm text-muted-foreground">Profile</p>
               </CardContent>
             </Card>
           </div>
