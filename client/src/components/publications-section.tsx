@@ -13,6 +13,18 @@ export default function PublicationsSection() {
 
   const selectedPublications = [
     {
+      title: "Coalescence sum rule and the electric charge- and strangeness-dependences of directed flow in heavy ion collisions",
+      authors: "Kishora Nayak, Shusu Shi, Zi-Wei Lin",
+      journal: "Physics Letters B",
+      volume: "849",
+      pages: "138479",
+      year: "2024",
+      type: "First Author",
+      collaboration: "Theory",
+      color: "bg-red-100 text-red-800",
+      doi: "https://doi.org/10.1016/j.physletb.2024.138479"
+    },
+    {
       title: "Directed and elliptic flow of identified hadrons, high-pT charged hadrons and light nuclei in Au+Au collisions at STAR",
       authors: "Kishora Nayak (STAR Collaboration)",
       journal: "Nuclear Physics A",
@@ -22,6 +34,7 @@ export default function PublicationsSection() {
       type: "First Author",
       collaboration: "STAR",
       color: "bg-blue-100 text-blue-800",
+      doi: ""
     },
     {
       title: "First observation of the directed flow of D⁰ and D̄⁰ in Au+Au collisions at √sNN = 200 GeV",
@@ -33,6 +46,7 @@ export default function PublicationsSection() {
       type: "High Impact",
       collaboration: "STAR",
       color: "bg-red-100 text-red-800",
+      doi: ""
     },
     {
       title: "Energy dependence study of directed flow in Au+Au collisions using an improved coalescence in a multiphase transport model",
@@ -44,6 +58,7 @@ export default function PublicationsSection() {
       type: "Lead Author",
       collaboration: "Theory",
       color: "bg-yellow-100 text-yellow-800",
+      doi: ""
     },
     {
       title: "Enhanced production of multi-strange hadrons in high-multiplicity proton collisions",
@@ -55,6 +70,7 @@ export default function PublicationsSection() {
       type: "Nature Journal",
       collaboration: "ALICE",
       color: "bg-purple-100 text-purple-800",
+      doi: ""
     },
   ];
 

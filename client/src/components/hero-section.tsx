@@ -76,14 +76,14 @@ export default function HeroSection() {
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-6 max-w-md slide-in-left stagger-3">
               <div className="text-center dynamic-card">
-                <div className="text-3xl font-bold text-white mb-1 gradient-text">25+</div>
+                <div className="text-3xl font-bold text-white mb-1 gradient-text">150+</div>
                 <div className="text-sm text-blue-200 flex items-center justify-center">
                   <BookOpen className="w-4 h-4 mr-1 bounce" />
                   Publications
                 </div>
               </div>
               <div className="text-center dynamic-card">
-                <div className="text-3xl font-bold text-white mb-1 gradient-text">5+</div>
+                <div className="text-3xl font-bold text-white mb-1 gradient-text">10+</div>
                 <div className="text-sm text-blue-200 flex items-center justify-center">
                   <Award className="w-4 h-4 mr-1 bounce" style={{animationDelay: '0.5s'}} />
                   Years Experience
