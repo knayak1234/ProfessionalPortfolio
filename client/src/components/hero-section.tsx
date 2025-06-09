@@ -39,7 +39,7 @@ export default function HeroSection() {
             
             <div className="flex items-center space-x-2 mb-6">
               <img 
-                src="/attached_assets/Panchyat_Logo_1749470233751.jpg" 
+                src={logoImage} 
                 alt="Panchayat College Logo" 
                 className="h-8 w-8 object-contain"
               />
@@ -97,7 +97,7 @@ export default function HeroSection() {
             <div className="relative">
               <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-2xl mx-auto lg:mx-0">
                 <img 
-                  src="/attached_assets/knayak_pict_1749469261620.jpg" 
+                  src={profileImage} 
                   alt="Dr. Kishora Nayak" 
                   className="w-full h-full object-cover"
                 />

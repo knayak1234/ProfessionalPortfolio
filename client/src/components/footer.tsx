@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import logoImage from "@assets/Panchyat_Logo_1749470233751.jpg";
 
 export default function Footer() {
   const quickLinks = [
@@ -30,7 +31,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/attached_assets/Panchyat_Logo_1749470233751.jpg" 
+                src={logoImage} 
                 alt="Panchayat College" 
                 className="h-8 w-8 object-contain"
               />
