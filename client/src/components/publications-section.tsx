@@ -13,6 +13,17 @@ export default function PublicationsSection() {
 
   const selectedPublications = [
     {
+      title: "Measurements of azimuthal anisotropy of prompt D⁰ mesons in Pb–Pb collisions at √sNN = 5.02 TeV",
+      authors: "ALICE Collaboration",
+      journal: "Physics Letters B",
+      volume: "851",
+      pages: "138043",
+      year: "2024",
+      type: "Recent Work",
+      collaboration: "ALICE",
+      color: "bg-green-100 text-green-800",
+    },
+    {
       title: "Directed and elliptic flow of identified hadrons, high-pT charged hadrons and light nuclei in Au+Au collisions at STAR",
       authors: "Kishora Nayak (STAR Collaboration)",
       journal: "Nuclear Physics A",
@@ -35,17 +46,6 @@ export default function PublicationsSection() {
       color: "bg-red-100 text-red-800",
     },
     {
-      title: "Enhanced production of multi-strange hadrons in high-multiplicity proton collisions",
-      authors: "ALICE Collaboration (J. Adam et al.)",
-      journal: "Nature Physics",
-      volume: "13",
-      pages: "535-539",
-      year: "2017",
-      type: "Nature Journal",
-      collaboration: "ALICE",
-      color: "bg-purple-100 text-purple-800",
-    },
-    {
       title: "Energy dependence study of directed flow in Au+Au collisions using an improved coalescence in a multiphase transport model",
       authors: "Kishora Nayak et al.",
       journal: "Physical Review C",
@@ -55,6 +55,17 @@ export default function PublicationsSection() {
       type: "Lead Author",
       collaboration: "Theory",
       color: "bg-yellow-100 text-yellow-800",
+    },
+    {
+      title: "Enhanced production of multi-strange hadrons in high-multiplicity proton collisions",
+      authors: "ALICE Collaboration (J. Adam et al.)",
+      journal: "Nature Physics",
+      volume: "13",
+      pages: "535-539",
+      year: "2017",
+      type: "Nature Journal",
+      collaboration: "ALICE",
+      color: "bg-purple-100 text-purple-800",
     },
   ];
 
