@@ -1,0 +1,177 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Atom, Flame, BarChart3, Globe, DollarSign, Users, GraduationCap } from "lucide-react";
+
+export default function ResearchSection() {
+  const researchAreas = [
+    {
+      title: "QCD Phase Diagram",
+      description: "Understanding the fundamental properties of Quantum Chromodynamics through experimental investigation of phase transitions in strongly interacting matter.",
+      icon: Atom,
+      color: "bg-blue-500",
+    },
+    {
+      title: "Quark-Gluon Plasma",
+      description: "Investigating medium dynamics and properties of Quark-Gluon Plasma formed in relativistic heavy-ion collisions at RHIC and LHC energies.",
+      icon: Flame,
+      color: "bg-orange-500",
+    },
+    {
+      title: "Flow Measurements",
+      description: "Directed and elliptic flow studies of identified hadrons, high-pT charged particles, and light nuclei in heavy-ion collisions.",
+      icon: BarChart3,
+      color: "bg-green-500",
+    },
+  ];
+
+  const collaborations = [
+    {
+      name: "STAR Collaboration",
+      location: "RHIC, BNL, USA",
+      description: "Working on directed and elliptic flow studies of identified hadrons in Au+Au collisions to understand the medium dynamics of QGP.",
+      icon: "⭐",
+    },
+    {
+      name: "ALICE Collaboration",
+      location: "LHC, CERN, Switzerland",
+      description: "Research on multiplicity dependence of light hadron production and high-pT resonance studies in various collision systems.",
+      icon: "🔬",
+    },
+  ];
+
+  const funding = [
+    {
+      title: "China Post-doctoral Science Foundation",
+      grantId: "2019M662681",
+      amount: "₹10,00,000",
+      status: "Completed",
+      color: "bg-green-100 text-green-800",
+    },
+    {
+      title: "Mukhyamantri Research & Innovation (MRI)",
+      grantId: "MRIP-2023 (23EM/PH/124)",
+      amount: "₹9,00,000",
+      status: "Active",
+      color: "bg-blue-100 text-blue-800",
+    },
+  ];
+
+  return (
+    <section id="research" className="section-padding bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 fade-in">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif">Research Focus</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Exploring the fundamental properties of matter under extreme conditions through experimental high-energy physics
+          </p>
+        </div>
+        
+        {/* Research Areas */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-16 fade-in">
+          {researchAreas.map((area, index) => (
+            <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <CardHeader>
+                <div className={`w-16 h-16 ${area.color} text-white rounded-xl flex items-center justify-center mb-4`}>
+                  <area.icon className="w-8 h-8" />
+                </div>
+                <CardTitle className="text-xl font-semibold">{area.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">{area.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        
+        {/* Current Research Projects */}
+        <div className="mb-16 fade-in">
+          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center font-serif">
+            Major Collaborations
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {collaborations.map((collab, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-3xl">{collab.icon}</div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold text-foreground mb-2">{collab.name}</h4>
+                      <p className="text-primary font-medium mb-3">{collab.location}</p>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{collab.description}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+        
+        {/* Research Funding */}
+        <div className="mb-16 fade-in">
+          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center font-serif">
+            Research Funding
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            {funding.map((grant, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-foreground mb-2">{grant.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">Grant ID: {grant.grantId}</p>
+                      <p className="text-lg font-semibold text-primary">{grant.amount}</p>
+                    </div>
+                    <Badge className={grant.color}>{grant.status}</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+        
+        {/* Research Supervision */}
+        <Card className="fade-in">
+          <CardHeader>
+            <CardTitle className="text-2xl font-semibold text-center font-serif">
+              Research Supervision
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-lg font-semibold text-primary mb-4 flex items-center">
+                  <Users className="w-5 h-5 mr-2" />
+                  Current Supervision
+                </h4>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Project Assistant funded by MRIP-2023 (23EM/PH/124)</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Multiple BSc and MSc thesis students</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-primary mb-4 flex items-center">
+                  <GraduationCap className="w-5 h-5 mr-2" />
+                  Recognition
+                </h4>
+                <Card className="bg-blue-50 border-blue-200">
+                  <CardContent className="p-4">
+                    <p className="text-foreground flex items-center">
+                      <GraduationCap className="w-5 h-5 mr-2 text-primary" />
+                      Official PhD Guide recognition by Sambalpur University, Odisha
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+}
