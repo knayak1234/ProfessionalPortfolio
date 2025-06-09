@@ -231,53 +231,7 @@ export default function AboutSection() {
               </CardContent>
             </Card>
           </div>
-          
-          {/* Academic Impact */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
-              <CardContent className="p-8">
-                <h4 className="text-2xl font-semibold text-foreground mb-6 flex items-center">
-                  <Trophy className="w-6 h-6 mr-3 text-blue-600" />
-                  Academic Excellence
-                </h4>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Research Publications</span>
-                    <span className="font-semibold text-foreground">30+ Peer-Reviewed Papers</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">International Experience</span>
-                    <span className="font-semibold text-foreground">5+ Years</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Teaching Experience</span>
-                    <span className="font-semibold text-foreground">Graduate & Undergraduate</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Research Focus</span>
-                    <span className="font-semibold text-foreground">High-Energy Nuclear Physics</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
-              <CardContent className="p-8">
-                <h4 className="text-2xl font-semibold text-foreground mb-6 flex items-center">
-                  <Globe className="w-6 h-6 mr-3 text-green-600" />
-                  Research Impact
-                </h4>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Dr. Nayak's research has significantly contributed to our understanding of the QCD phase diagram and the properties of matter under extreme conditions. His work with STAR and ALICE collaborations has helped advance knowledge in experimental high-energy nuclear physics.
-                  </p>
-                  <p>
-                    His expertise spans from theoretical foundations to experimental data analysis, making him a valuable contributor to the international physics community and an inspiring educator for the next generation of physicists.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+
         </div>
       </div>
     </section>
