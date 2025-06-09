@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import logoImage from "@assets/Panchyat_Logo_1749470233751.jpg";
 
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
@@ -54,7 +55,7 @@ export default function Navigation() {
           {/* Logo and Title */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/attached_assets/Panchyat_Logo_1749470233751.jpg" 
+              src={logoImage} 
               alt="Panchayat College Logo" 
               className="h-10 w-10 object-contain"
             />

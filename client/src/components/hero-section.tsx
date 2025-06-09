@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, Mail, Award, Users, BookOpen } from "lucide-react";
+import logoImage from "@assets/Panchyat_Logo_1749470233751.jpg";
+import profileImage from "@assets/knayak_pict_1749469261620.jpg";
 
 export default function HeroSection() {
   const handleDownloadCV = () => {

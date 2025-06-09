@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 98%);
-  --foreground: hsl(222, 84%, 4.9%);
-  --muted: hsl(0, 0%, 95%);
-  --muted-foreground: hsl(215, 16%, 46.9%);
+  --background: hsl(60, 20%, 97%);
+  --foreground: hsl(0, 0%, 20%);
+  --muted: hsl(60, 15%, 92%);
+  --muted-foreground: hsl(0, 0%, 45%);
   --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(222, 84%, 4.9%);
+  --popover-foreground: hsl(0, 0%, 20%);
   --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(222, 84%, 4.9%);
-  --border: hsl(214, 32%, 91%);
-  --input: hsl(214, 32%, 91%);
-  --primary: hsl(236, 72%, 45%);
+  --card-foreground: hsl(0, 0%, 20%);
+  --border: hsl(60, 15%, 85%);
+  --input: hsl(60, 15%, 90%);
+  --primary: hsl(45, 85%, 35%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(210, 40%, 96%);
-  --secondary-foreground: hsl(222, 84%, 4.9%);
-  --accent: hsl(210, 40%, 96%);
-  --accent-foreground: hsl(222, 84%, 4.9%);
+  --secondary: hsl(60, 20%, 88%);
+  --secondary-foreground: hsl(0, 0%, 20%);
+  --accent: hsl(60, 30%, 85%);
+  --accent-foreground: hsl(0, 0%, 20%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(236, 72%, 45%);
+  --ring: hsl(45, 85%, 35%);
   --radius: 0.5rem;
   
-  /* Panchayat College brand colors */
-  --college-blue: hsl(236, 72%, 45%);
-  --college-blue-dark: hsl(236, 72%, 35%);
-  --college-blue-light: hsl(217, 91%, 60%);
-  --college-gold: hsl(43, 96%, 56%);
+  /* Academic theme colors - Grey and Yellow */
+  --academic-primary: hsl(45, 85%, 35%);
+  --academic-secondary: hsl(0, 0%, 45%);
+  --academic-accent: hsl(45, 75%, 75%);
+  --academic-light: hsl(60, 30%, 95%);
 }
 
 .dark {
@@ -115,7 +115,7 @@ html {
 
 /* Custom gradient backgrounds */
 .gradient-bg {
-  background: linear-gradient(135deg, hsl(236, 72%, 45%) 0%, hsl(217, 91%, 60%) 100%);
+  background: linear-gradient(135deg, hsl(45, 85%, 35%) 0%, hsl(0, 0%, 45%) 100%);
 }
 
 /* Publication card hover effects */
