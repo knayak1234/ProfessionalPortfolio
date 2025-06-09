@@ -185,10 +185,10 @@ export default function AboutSection() {
         </div>
         
         {/* Research Expertise & Contributions */}
-        <div className="mt-16 fade-in">
-          <h3 className="text-3xl font-bold text-foreground mb-12 text-center font-serif">Research Expertise & Key Contributions</h3>
+        <div className="mt-12 fade-in">
+          <h3 className="text-3xl font-bold text-foreground mb-8 text-center font-serif">Research Expertise & Key Contributions</h3>
           
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid lg:grid-cols-3 gap-8 mb-6">
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-8">
                 <div className="text-center">
