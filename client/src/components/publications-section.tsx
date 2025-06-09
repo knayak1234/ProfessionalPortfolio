@@ -22,6 +22,19 @@ export default function PublicationsSection() {
       type: "Recent Work",
       collaboration: "ALICE",
       color: "bg-green-100 text-green-800",
+      doi: "https://doi.org/10.1016/j.physletb.2024.138479"
+    },
+    {
+      title: "Measurements of azimuthal anisotropy and collectivity in small collision systems with ALICE",
+      authors: "ALICE Collaboration",
+      journal: "Physics Letters B",
+      volume: "850",
+      pages: "138479",
+      year: "2024",
+      type: "Recent Work",
+      collaboration: "ALICE",
+      color: "bg-green-100 text-green-800",
+      doi: "https://doi.org/10.1016/j.physletb.2024.138479"
     },
     {
       title: "Directed and elliptic flow of identified hadrons, high-pT charged hadrons and light nuclei in Au+Au collisions at STAR",
@@ -145,10 +158,22 @@ export default function PublicationsSection() {
                     <span className="font-medium">{pub.authors}</span>
                   </p>
                   
-                  <p className="text-sm text-muted-foreground">
-                    <span className="italic">{pub.journal}</span>{" "}
-                    <span className="font-mono">{pub.volume}</span>, {pub.pages} ({pub.year})
-                  </p>
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm text-muted-foreground">
+                      <span className="italic">{pub.journal}</span>{" "}
+                      <span className="font-mono">{pub.volume}</span>, {pub.pages} ({pub.year})
+                    </p>
+                    {pub.doi && (
+                      <a 
+                        href={pub.doi} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200 scale-hover"
+                      >
+                        DOI →
+                      </a>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}
