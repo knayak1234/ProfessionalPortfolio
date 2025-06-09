@@ -5,8 +5,7 @@ import { BookOpen, Users, Award, ExternalLink, Globe, Presentation, Calendar, Gr
 
 export default function PublicationsSection() {
   const publicationStats = [
-    { number: "25+", label: "Total Publications", icon: BookOpen, color: "bg-blue-500" },
-    { number: "9", label: "Journal Articles", icon: Award, color: "bg-green-500" },
+    { number: "150+", label: "Total Publications", icon: BookOpen, color: "bg-blue-500" },
     { number: "16", label: "Conference Papers", icon: Presentation, color: "bg-purple-500" },
     { number: "11", label: "Invited Talks", icon: Globe, color: "bg-orange-500" },
   ];

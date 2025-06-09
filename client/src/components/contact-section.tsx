@@ -122,7 +122,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Email</h4>
                     <p className="text-primary hover:text-primary/80 cursor-pointer">
-                      kishora.nayak@panchayatcollege.edu
+                      k.nayak1234@gmail.com
                     </p>
                     <p className="text-sm text-muted-foreground">Academic inquiries and research collaboration</p>
                   </div>
