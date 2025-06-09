@@ -59,8 +59,7 @@ export default function HeroSection() {
               </Button>
               <Button 
                 onClick={scrollToContact}
-                variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-primary"
+                className="bg-green-600 text-white hover:bg-green-700 border-0"
               >
                 <Mail className="w-4 h-4 mr-2" />
                 Get in Touch

@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(220, 15%, 97%);
-  --foreground: hsl(220, 25%, 15%);
-  --muted: hsl(220, 15%, 94%);
-  --muted-foreground: hsl(220, 10%, 46%);
+  --background: hsl(0, 0%, 99%);
+  --foreground: hsl(0, 0%, 15%);
+  --muted: hsl(0, 0%, 97%);
+  --muted-foreground: hsl(0, 0%, 45%);
   --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(220, 25%, 15%);
+  --popover-foreground: hsl(0, 0%, 15%);
   --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(220, 25%, 15%);
-  --border: hsl(220, 15%, 88%);
-  --input: hsl(220, 15%, 92%);
+  --card-foreground: hsl(0, 0%, 15%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 95%);
   --primary: hsl(221, 83%, 53%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(220, 15%, 92%);
-  --secondary-foreground: hsl(220, 25%, 15%);
-  --accent: hsl(220, 20%, 90%);
-  --accent-foreground: hsl(220, 25%, 15%);
+  --secondary: hsl(0, 0%, 95%);
+  --secondary-foreground: hsl(0, 0%, 15%);
+  --accent: hsl(0, 0%, 92%);
+  --accent-foreground: hsl(0, 0%, 15%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(210, 40%, 98%);
   --ring: hsl(221, 83%, 53%);
   --radius: 0.75rem;
   
-  /* Inflection AI inspired colors */
-  --inflection-primary: hsl(221, 83%, 53%);
-  --inflection-secondary: hsl(220, 15%, 85%);
-  --inflection-accent: hsl(250, 100%, 95%);
-  --inflection-neutral: hsl(220, 15%, 97%);
+  /* Clean minimal colors */
+  --clean-bg: hsl(0, 0%, 99%);
+  --clean-muted: hsl(0, 0%, 97%);
+  --clean-border: hsl(0, 0%, 92%);
+  --clean-text: hsl(0, 0%, 15%);
 }
 
 .dark {
