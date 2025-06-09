@@ -60,8 +60,8 @@ export default function TeachingSection() {
                   <tr className="border-b border-gray-200">
                     <th className="text-left py-3 px-4 font-semibold text-foreground">Course</th>
                     <th className="text-center py-3 px-4 font-semibold text-foreground">Level</th>
-                    <th className="text-center py-3 px-4 font-semibold text-foreground">Year</th>
                     <th className="text-center py-3 px-4 font-semibold text-foreground">Semester</th>
+                    <th className="text-center py-3 px-4 font-semibold text-foreground">Year</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -76,13 +76,13 @@ export default function TeachingSection() {
                       <td className="py-3 px-4 text-center">
                         <Badge variant="outline">{course.level}</Badge>
                       </td>
-                      <td className="py-3 px-4 text-center text-muted-foreground">
-                        {course.year}
-                      </td>
                       <td className="py-3 px-4 text-center">
                         <Badge variant={course.semester === "Odd" ? "default" : "secondary"} className="text-xs">
                           {course.semester}
                         </Badge>
+                      </td>
+                      <td className="py-3 px-4 text-center text-muted-foreground">
+                        {course.year}
                       </td>
                     </tr>
                   ))}
