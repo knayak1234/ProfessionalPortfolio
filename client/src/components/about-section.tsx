@@ -42,12 +42,6 @@ export default function AboutSection() {
 
   const internationalExp = [
     {
-      location: "Institute of Modern Physics, CCNU, China",
-      description: "Post-doctoral Research Scientist",
-      period: "2018-2021",
-      icon: University,
-    },
-    {
       location: "CERN, Switzerland",
       description: "Visiting Scientist at ALICE experiment, LHC",
       period: "2014-2017",
@@ -57,6 +51,12 @@ export default function AboutSection() {
       location: "INFN, Catania, Italy",
       description: "Research collaboration during doctorate studies",
       icon: Globe,
+    },
+    {
+      location: "Institute of Modern Physics, CCNU, China",
+      description: "Post-doctoral Research Scientist",
+      period: "2018-2021",
+      icon: University,
     },
   ];
 
