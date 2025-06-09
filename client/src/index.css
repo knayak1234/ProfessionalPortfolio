@@ -184,12 +184,13 @@ html {
 }
 
 .gradient-text {
-  background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
+  background: linear-gradient(-45deg, #fbbf24, #f59e0b, #eab308, #facc15, #fde047);
   background-size: 400% 400%;
   animation: gradient 3s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: brightness(1.2);
 }
 
 /* Typing animation */

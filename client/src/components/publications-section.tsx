@@ -13,30 +13,6 @@ export default function PublicationsSection() {
 
   const selectedPublications = [
     {
-      title: "Measurements of azimuthal anisotropy of prompt D⁰ mesons in Pb–Pb collisions at √sNN = 5.02 TeV",
-      authors: "ALICE Collaboration",
-      journal: "Physics Letters B",
-      volume: "851",
-      pages: "138043",
-      year: "2024",
-      type: "Recent Work",
-      collaboration: "ALICE",
-      color: "bg-green-100 text-green-800",
-      doi: "https://doi.org/10.1016/j.physletb.2024.138479"
-    },
-    {
-      title: "Measurements of azimuthal anisotropy and collectivity in small collision systems with ALICE",
-      authors: "ALICE Collaboration",
-      journal: "Physics Letters B",
-      volume: "850",
-      pages: "138479",
-      year: "2024",
-      type: "Recent Work",
-      collaboration: "ALICE",
-      color: "bg-green-100 text-green-800",
-      doi: "https://doi.org/10.1016/j.physletb.2024.138479"
-    },
-    {
       title: "Directed and elliptic flow of identified hadrons, high-pT charged hadrons and light nuclei in Au+Au collisions at STAR",
       authors: "Kishora Nayak (STAR Collaboration)",
       journal: "Nuclear Physics A",
