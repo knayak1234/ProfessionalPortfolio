@@ -59,15 +59,15 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif">About Dr. Nayak</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-5xl mx-auto leading-relaxed">
             Distinguished experimental physicist with extensive international research experience. He currently serves as Assistant Professor (OES-I) in the P.G. Department of Physics at Panchayat College Bargarh, affiliated with Sambalpur University, Odisha.
           </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
+          <p className="text-lg text-muted-foreground max-w-5xl mx-auto mt-6 leading-relaxed">
             His research focuses on understanding the QCD Phase Diagram and medium dynamics of Quark-Gluon Plasma (QGP) formed in relativistic heavy-ion collisions. He has contributed to groundbreaking discoveries through his work with STAR and ALICE collaborations at RHIC, USA and LHC, Switzerland.
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Education & Experience */}
           <div className="fade-in">
             <h3 className="text-2xl font-semibold text-foreground mb-8 flex items-center font-serif">
@@ -181,6 +181,102 @@ export default function AboutSection() {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+        
+        {/* Research Expertise & Contributions */}
+        <div className="mt-16 fade-in">
+          <h3 className="text-3xl font-bold text-foreground mb-12 text-center font-serif">Research Expertise & Key Contributions</h3>
+          
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <GraduationCap className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-foreground mb-4">QCD Phase Diagram</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Specialized research in understanding the Quantum Chromodynamics phase diagram and the transition between hadronic matter and quark-gluon plasma states in extreme conditions.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Globe className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-foreground mb-4">Heavy-Ion Collisions</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Extensive experience in analyzing relativistic heavy-ion collision data from RHIC and LHC experiments to study the properties of quark-gluon plasma and medium dynamics.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-foreground mb-4">International Collaborations</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Active member of prestigious international collaborations including STAR at RHIC and ALICE at LHC, contributing to groundbreaking discoveries in high-energy nuclear physics.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Academic Impact */}
+          <div className="grid lg:grid-cols-2 gap-8">
+            <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+              <CardContent className="p-8">
+                <h4 className="text-2xl font-semibold text-foreground mb-6 flex items-center">
+                  <Trophy className="w-6 h-6 mr-3 text-blue-600" />
+                  Academic Excellence
+                </h4>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Research Publications</span>
+                    <span className="font-semibold text-foreground">30+ Peer-Reviewed Papers</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">International Experience</span>
+                    <span className="font-semibold text-foreground">5+ Years</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Teaching Experience</span>
+                    <span className="font-semibold text-foreground">Graduate & Undergraduate</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Research Focus</span>
+                    <span className="font-semibold text-foreground">High-Energy Nuclear Physics</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
+              <CardContent className="p-8">
+                <h4 className="text-2xl font-semibold text-foreground mb-6 flex items-center">
+                  <Globe className="w-6 h-6 mr-3 text-green-600" />
+                  Research Impact
+                </h4>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Dr. Nayak's research has significantly contributed to our understanding of the QCD phase diagram and the properties of matter under extreme conditions. His work with STAR and ALICE collaborations has helped advance knowledge in experimental high-energy nuclear physics.
+                  </p>
+                  <p>
+                    His expertise spans from theoretical foundations to experimental data analysis, making him a valuable contributor to the international physics community and an inspiring educator for the next generation of physicists.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
