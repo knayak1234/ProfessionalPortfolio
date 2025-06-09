@@ -90,7 +90,7 @@ export default function PublicationsSection() {
   ];
 
   return (
-    <section id="publications" className="section-padding bg-muted/30">
+    <section id="publications" className="section-padding bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif">Publications & Presentations</h2>

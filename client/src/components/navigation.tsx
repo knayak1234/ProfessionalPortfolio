@@ -16,7 +16,7 @@ export default function Navigation() {
       let current = "";
       
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = (section as HTMLElement).offsetTop - 100;
         if (window.pageYOffset >= sectionTop) {
           current = section.getAttribute("id") || "";
         }
@@ -47,7 +47,7 @@ export default function Navigation() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 no-print ${
-      isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-background/90"
+      isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200" : "bg-white/90 shadow-sm"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -60,7 +60,7 @@ export default function Navigation() {
             />
             <div>
               <div className="font-semibold text-lg text-primary">Dr. Kishora Nayak</div>
-              <div className="text-xs text-muted-foreground">Panchayat College</div>
+              <div className="text-xs text-gray-600">Panchayat College</div>
             </div>
           </div>
 
@@ -70,8 +70,10 @@ export default function Navigation() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`nav-link text-sm font-medium transition-colors hover:text-primary ${
-                  activeSection === item.href.slice(1) ? "text-primary active" : "text-muted-foreground"
+                className={`nav-link text-sm font-semibold transition-all duration-200 hover:text-primary hover:scale-105 ${
+                  activeSection === item.href.slice(1) 
+                    ? "text-primary active border-b-2 border-primary pb-1" 
+                    : "text-gray-700 hover:text-primary"
                 }`}
               >
                 {item.label}
@@ -86,14 +88,16 @@ export default function Navigation() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
-              <div className="flex flex-col space-y-4 mt-8">
+            <SheetContent side="right" className="bg-white">
+              <div className="flex flex-col space-y-6 mt-8">
                 {navItems.map((item) => (
                   <button
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
-                    className={`text-left text-sm font-medium transition-colors hover:text-primary ${
-                      activeSection === item.href.slice(1) ? "text-primary" : "text-muted-foreground"
+                    className={`text-left text-base font-semibold transition-colors hover:text-primary p-3 rounded-lg ${
+                      activeSection === item.href.slice(1) 
+                        ? "text-primary bg-blue-50 border-l-4 border-primary" 
+                        : "text-gray-700 hover:bg-gray-50"
                     }`}
                   >
                     {item.label}
