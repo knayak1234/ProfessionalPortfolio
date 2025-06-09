@@ -34,6 +34,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
       message: "Contact form submitted successfully" 
     });
   });
+
+  // Publications download endpoint
+  app.get("/api/download-publications", (req, res) => {
+    const filePath = "./attached_assets/Publication_List_KNayak_1749470127101.pdf";
+    
+    // Set headers for PDF download
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', 'inline; filename="Publication_List_KNayak.pdf"');
+    
+    // Send the file
+    res.sendFile(filePath, { root: '.' }, (err) => {
+      if (err) {
+        console.error('Error sending publication file:', err);
+        res.status(404).json({ error: "Publication list not found" });
+      }
+    });
+  });
   // put application routes here
   // prefix all routes with /api
 

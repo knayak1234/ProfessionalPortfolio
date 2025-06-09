@@ -150,13 +150,54 @@ export default function PublicationsSection() {
           </div>
           
           <div className="text-center mt-8">
-            <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground">
+            <Button 
+              variant="outline" 
+              className="hover:bg-primary hover:text-primary-foreground"
+              onClick={() => window.open('/api/download-publications', '_blank')}
+            >
               <ExternalLink className="w-4 h-4 mr-2" />
               View Complete Publication List
             </Button>
           </div>
         </div>
         
+        {/* Research Profiles */}
+        <div className="mb-16 fade-in">
+          <h3 className="text-2xl font-semibold text-foreground mb-8 font-serif text-center">Research Profiles</h3>
+          
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.open('https://orcid.org/0000-0000-0000-0000', '_blank')}>
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <ExternalLink className="w-6 h-6 text-green-600" />
+                </div>
+                <h4 className="font-semibold text-foreground mb-2">ORCID</h4>
+                <p className="text-sm text-muted-foreground">0000-0000-0000-0000</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.open('https://www.researchgate.net/profile/Kishora-Nayak', '_blank')}>
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-blue-600" />
+                </div>
+                <h4 className="font-semibold text-foreground mb-2">ResearchGate</h4>
+                <p className="text-sm text-muted-foreground">Profile</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.open('https://scholar.google.com/citations?user=AUTHOR_ID', '_blank')}>
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BookOpen className="w-6 h-6 text-orange-600" />
+                </div>
+                <h4 className="font-semibold text-foreground mb-2">Google Scholar</h4>
+                <p className="text-sm text-muted-foreground">Citations</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* Conference Presentations */}
         <div className="fade-in">
           <h3 className="text-2xl font-semibold text-foreground mb-8 font-serif">Recent Conference Presentations</h3>
