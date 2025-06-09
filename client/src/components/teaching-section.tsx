@@ -4,12 +4,12 @@ import { GraduationCap, Users, Settings, BookOpen, Award, Quote } from "lucide-r
 
 export default function TeachingSection() {
   const courses = [
-    { name: "Nuclear & Particle Physics", level: "MSc", color: "bg-blue-500" },
-    { name: "Classical Mechanics", level: "BSc/MSc", color: "bg-green-500" },
-    { name: "Statistical Mechanics", level: "MSc", color: "bg-purple-500" },
-    { name: "Computer Programming", level: "BSc", color: "bg-orange-500" },
-    { name: "Modern Physics", level: "BSc", color: "bg-red-500" },
-    { name: "Optics", level: "BSc", color: "bg-indigo-500" },
+    { name: "Nuclear & Particle Physics", level: "MSc", year: "2023-2024", color: "bg-blue-500" },
+    { name: "Classical Mechanics", level: "BSc/MSc", year: "2023-2024", color: "bg-green-500" },
+    { name: "Statistical Mechanics", level: "MSc", year: "2024", color: "bg-purple-500" },
+    { name: "Computer Programming", level: "BSc", year: "2023-2024", color: "bg-orange-500" },
+    { name: "Modern Physics", level: "BSc", year: "2024", color: "bg-red-500" },
+    { name: "Optics", level: "BSc", year: "2023-2024", color: "bg-indigo-500" },
   ];
 
   const administrativeRoles = [
@@ -54,20 +54,34 @@ export default function TeachingSection() {
               Courses Taught
             </h3>
             
-            <div className="grid gap-4 mb-8">
-              {courses.map((course, index) => (
-                <Card key={index} className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className={`w-3 h-3 ${course.color} rounded-full`}></div>
-                        <h4 className="font-semibold text-foreground">{course.name}</h4>
-                      </div>
-                      <Badge variant="outline">{course.level}</Badge>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b border-gray-200">
+                    <th className="text-left py-3 px-4 font-semibold text-foreground">Course</th>
+                    <th className="text-center py-3 px-4 font-semibold text-foreground">Level</th>
+                    <th className="text-center py-3 px-4 font-semibold text-foreground">Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {courses.map((course, index) => (
+                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                      <td className="py-3 px-4">
+                        <div className="flex items-center space-x-3">
+                          <div className={`w-3 h-3 ${course.color} rounded-full flex-shrink-0`}></div>
+                          <span className="font-medium text-foreground">{course.name}</span>
+                        </div>
+                      </td>
+                      <td className="py-3 px-4 text-center">
+                        <Badge variant="outline">{course.level}</Badge>
+                      </td>
+                      <td className="py-3 px-4 text-center text-muted-foreground">
+                        {course.year}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
             
             {/* Teaching Philosophy */}
