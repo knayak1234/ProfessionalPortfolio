@@ -74,25 +74,25 @@ export default function HeroSection() {
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-6 max-w-md">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">25+</div>
+            <div className="grid grid-cols-3 gap-6 max-w-md slide-in-left stagger-3">
+              <div className="text-center dynamic-card">
+                <div className="text-3xl font-bold text-white mb-1 gradient-text">25+</div>
                 <div className="text-sm text-blue-200 flex items-center justify-center">
-                  <BookOpen className="w-4 h-4 mr-1" />
+                  <BookOpen className="w-4 h-4 mr-1 bounce" />
                   Publications
                 </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">5+</div>
+              <div className="text-center dynamic-card">
+                <div className="text-3xl font-bold text-white mb-1 gradient-text">5+</div>
                 <div className="text-sm text-blue-200 flex items-center justify-center">
-                  <Award className="w-4 h-4 mr-1" />
+                  <Award className="w-4 h-4 mr-1 bounce" style={{animationDelay: '0.5s'}} />
                   Years Experience
                 </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">2</div>
+              <div className="text-center dynamic-card">
+                <div className="text-3xl font-bold text-white mb-1 gradient-text">2</div>
                 <div className="text-sm text-blue-200 flex items-center justify-center">
-                  <Users className="w-4 h-4 mr-1" />
+                  <Users className="w-4 h-4 mr-1 bounce" style={{animationDelay: '1s'}} />
                   Collaborations
                 </div>
               </div>

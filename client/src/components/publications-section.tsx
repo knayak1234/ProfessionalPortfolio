@@ -126,8 +126,8 @@ export default function PublicationsSection() {
         </div>
         
         {/* Selected Publications */}
-        <div className="mb-16 fade-in">
-          <h3 className="text-2xl font-semibold text-foreground mb-8 font-serif">Selected Publications</h3>
+        <div className="mb-16 slide-in-left">
+          <h3 className="text-2xl font-semibold text-foreground mb-8 font-serif gradient-text">Selected Publications</h3>
           <div className="space-y-6">
             {selectedPublications.map((pub, index) => (
               <Card key={index} className={`publication-card dynamic-card fade-in stagger-${index + 1}`}>
