@@ -3,6 +3,8 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { initAnimations } from "@/lib/animations";
+import { useEffect } from "react";
 import Homepage from "@/pages/homepage";
 import NotFound from "@/pages/not-found";
 
@@ -16,6 +18,10 @@ function Router() {
 }
 
 function App() {
+  useEffect(() => {
+    initAnimations();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

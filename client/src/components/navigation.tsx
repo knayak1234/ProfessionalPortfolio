@@ -71,7 +71,7 @@ export default function Navigation() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`nav-link text-base font-semibold transition-all duration-200 hover:text-primary hover:scale-105 ${
+                className={`nav-link text-base font-semibold transition-all duration-300 hover:text-primary scale-hover relative group ${
                   activeSection === item.href.slice(1) 
                     ? "text-primary active border-b-2 border-primary pb-1" 
                     : "text-gray-700 hover:text-primary"
