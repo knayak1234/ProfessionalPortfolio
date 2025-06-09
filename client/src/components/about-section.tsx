@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Globe, Trophy, University, Calendar, MapPin } from "lucide-react";
+import { GraduationCap, Globe, Trophy, University, Calendar, MapPin, Users } from "lucide-react";
 
 export default function AboutSection() {
   const education = [
