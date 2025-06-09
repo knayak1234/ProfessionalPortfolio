@@ -73,10 +73,10 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif">About Dr. Nayak</h2>
-          <p className="text-xl text-muted-foreground max-w-5xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground w-full mx-auto leading-relaxed px-4">
             Experimental physicist with extensive international research experience. He currently serves as Assistant Professor (OES-I) in the P.G. Department of Physics at Panchayat College Bargarh, affiliated with Sambalpur University, Odisha.
           </p>
-          <p className="text-lg text-muted-foreground max-w-5xl mx-auto mt-6 leading-relaxed">
+          <p className="text-lg text-muted-foreground w-full mx-auto mt-6 leading-relaxed px-4">
             His research focuses on understanding the QCD Phase Diagram and medium dynamics of Quark-Gluon Plasma (QGP) formed in relativistic heavy-ion collisions. He has contributed to groundbreaking discoveries through his work with STAR and ALICE collaborations at RHIC, USA and LHC, Switzerland.
           </p>
         </div>
