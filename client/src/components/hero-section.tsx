@@ -18,12 +18,19 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="gradient-bg text-white pt-20 pb-16 lg:pt-32 lg:pb-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" className="gradient-bg text-white pt-20 pb-16 lg:pt-32 lg:pb-24 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-20 h-20 bg-white rounded-full float"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-blue-200 rounded-full float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-32 left-1/4 w-12 h-12 bg-purple-200 rounded-full float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-20 right-1/3 w-14 h-14 bg-white rounded-full float" style={{animationDelay: '0.5s'}}></div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 lg:gap-12 items-center">
-          <div className="lg:col-span-8 fade-in">
+          <div className="lg:col-span-8 slide-in-left">
             <div className="flex items-center space-x-2 mb-4">
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 scale-hover pulse-glow">
                 <Award className="w-4 h-4 mr-2" />
                 Experimental Physicist
               </Badge>
@@ -33,7 +40,7 @@ export default function HeroSection() {
               Dr. Kishora Nayak
             </h1>
             
-            <h2 className="text-xl lg:text-2xl font-light mb-6 text-blue-100">
+            <h2 className="text-xl lg:text-2xl font-light mb-6 text-blue-100 slide-in-left stagger-1">
               Assistant Professor of Physics
             </h2>
             
