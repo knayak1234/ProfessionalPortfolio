@@ -57,7 +57,7 @@ export default function Navigation() {
             <img 
               src={logoImage} 
               alt="Panchayat College Logo" 
-              className="h-10 w-10 object-contain"
+              className="h-10 w-10 object-contain rounded-full"
             />
             <div>
               <div className="font-semibold text-lg text-primary">Dr. Kishora Nayak</div>
@@ -71,7 +71,7 @@ export default function Navigation() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`nav-link text-sm font-semibold transition-all duration-200 hover:text-primary hover:scale-105 ${
+                className={`nav-link text-base font-semibold transition-all duration-200 hover:text-primary hover:scale-105 ${
                   activeSection === item.href.slice(1) 
                     ? "text-primary active border-b-2 border-primary pb-1" 
                     : "text-gray-700 hover:text-primary"

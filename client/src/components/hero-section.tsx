@@ -41,7 +41,7 @@ export default function HeroSection() {
               <img 
                 src={logoImage} 
                 alt="Panchayat College Logo" 
-                className="h-8 w-8 object-contain"
+                className="h-8 w-8 object-contain rounded-full"
               />
               <span className="text-lg">Panchayat College, Bargarh</span>
             </div>
@@ -94,7 +94,7 @@ export default function HeroSection() {
           
           <div className="lg:col-span-4 mt-12 lg:mt-0 fade-in">
             <div className="relative">
-              <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-2xl mx-auto lg:mx-0">
+              <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl mx-auto lg:mx-0">
                 <img 
                   src={profileImage} 
                   alt="Dr. Kishora Nayak" 
@@ -104,6 +104,65 @@ export default function HeroSection() {
               {/* Decorative elements */}
               <div className="absolute -bottom-4 -right-4 bg-yellow-400 text-white p-3 rounded-xl">
                 <Award className="w-6 h-6" />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* About Dr. Nayak Preview */}
+        <div className="mt-16 fade-in">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">About Dr. Nayak</h2>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-lg text-blue-100 leading-relaxed mb-6">
+                Dr. Kishora Nayak is a distinguished experimental physicist with extensive international research experience. 
+                He currently serves as Assistant Professor (OES-I) in the P.G. Department of Physics at Panchayat College Bargarh, 
+                affiliated with Sambalpur University, Odisha.
+              </p>
+              <p className="text-lg text-blue-100 leading-relaxed mb-6">
+                His research focuses on understanding the QCD Phase Diagram and medium dynamics of Quark-Gluon Plasma (QGP) 
+                formed in relativistic heavy-ion collisions. He has contributed to groundbreaking discoveries through his work 
+                with STAR and ALICE collaborations at RHIC and LHC.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/10 rounded-lg p-4 text-center">
+                  <div className="text-2xl font-bold text-white mb-1">PhD</div>
+                  <div className="text-sm text-blue-200">NISER, Odisha</div>
+                </div>
+                <div className="bg-white/10 rounded-lg p-4 text-center">
+                  <div className="text-2xl font-bold text-white mb-1">2024</div>
+                  <div className="text-sm text-blue-200">Young Scientist Award</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="bg-white/10 rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-white mb-4">Education & Experience</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <div className="text-white font-medium">Assistant Professor (2023 - Present)</div>
+                      <div className="text-blue-200 text-sm">Panchayat College Bargarh</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <div className="text-white font-medium">Post-Doc (2018-2023)</div>
+                      <div className="text-blue-200 text-sm">CCNU China & IISER Tirupati</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <div className="text-white font-medium">PhD (2012-2018)</div>
+                      <div className="text-blue-200 text-sm">NISER, Odisha</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

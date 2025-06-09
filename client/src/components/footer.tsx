@@ -33,7 +33,7 @@ export default function Footer() {
               <img 
                 src={logoImage} 
                 alt="Panchayat College" 
-                className="h-8 w-8 object-contain"
+                className="h-8 w-8 object-contain rounded-full"
               />
               <div>
                 <div className="font-semibold">Dr. Kishora Nayak</div>
