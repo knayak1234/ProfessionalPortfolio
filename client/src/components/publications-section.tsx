@@ -134,16 +134,10 @@ export default function PublicationsSection() {
                     <span className="font-medium">{pub.authors}</span>
                   </p>
                   
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-sm text-muted-foreground">
                     <span className="italic">{pub.journal}</span>{" "}
                     <span className="font-mono">{pub.volume}</span>, {pub.pages} ({pub.year})
                   </p>
-                  
-                  <div className="flex items-center space-x-2">
-                    <Badge variant="outline" className="text-xs">
-                      {pub.collaboration}
-                    </Badge>
-                  </div>
                 </CardContent>
               </Card>
             ))}
