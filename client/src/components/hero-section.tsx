@@ -29,7 +29,7 @@ export default function HeroSection() {
               </Badge>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-serif">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-serif gradient-text">
               Dr. Kishora Nayak
             </h1>
             
@@ -92,17 +92,17 @@ export default function HeroSection() {
             </div>
           </div>
           
-          <div className="lg:col-span-4 mt-12 lg:mt-0 fade-in">
+          <div className="lg:col-span-4 mt-12 lg:mt-0 slide-in-right">
             <div className="relative">
-              <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl mx-auto lg:mx-0">
+              <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl mx-auto lg:mx-0 float pulse-glow">
                 <img 
                   src={profileImage} 
                   alt="Dr. Kishora Nayak" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover scale-hover"
                 />
               </div>
               {/* Decorative elements */}
-              <div className="absolute -bottom-4 -right-4 bg-yellow-400 text-white p-3 rounded-xl">
+              <div className="absolute -bottom-4 -right-4 bg-yellow-400 text-white p-3 rounded-xl float scale-hover">
                 <Award className="w-6 h-6" />
               </div>
             </div>

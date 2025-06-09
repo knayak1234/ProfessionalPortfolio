@@ -130,7 +130,7 @@ export default function PublicationsSection() {
           <h3 className="text-2xl font-semibold text-foreground mb-8 font-serif">Selected Publications</h3>
           <div className="space-y-6">
             {selectedPublications.map((pub, index) => (
-              <Card key={index} className="publication-card hover:shadow-lg transition-all duration-300">
+              <Card key={index} className={`publication-card dynamic-card fade-in stagger-${index + 1}`}>
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <Badge className={`${pub.color} text-xs px-2 py-1`}>{pub.type}</Badge>
