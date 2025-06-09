@@ -56,6 +56,17 @@ export default function PublicationsSection() {
       collaboration: "Theory",
       color: "bg-yellow-100 text-yellow-800",
     },
+    {
+      title: "Measurements of azimuthal anisotropy of prompt D⁰ mesons in Pb–Pb collisions at √sNN = 5.02 TeV",
+      authors: "ALICE Collaboration",
+      journal: "Physics Letters B",
+      volume: "851",
+      pages: "138043",
+      year: "2024",
+      type: "Recent Work",
+      collaboration: "ALICE",
+      color: "bg-green-100 text-green-800",
+    },
   ];
 
   const recentConferences = [
