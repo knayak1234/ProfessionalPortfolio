@@ -66,7 +66,30 @@ export default function HeroSection() {
               </Button>
             </div>
 
-
+            {/* Quick Stats */}
+            <div className="grid grid-cols-3 gap-6 max-w-md">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-1">25+</div>
+                <div className="text-sm text-blue-200 flex items-center justify-center">
+                  <BookOpen className="w-4 h-4 mr-1" />
+                  Publications
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-1">5+</div>
+                <div className="text-sm text-blue-200 flex items-center justify-center">
+                  <Award className="w-4 h-4 mr-1" />
+                  Years Experience
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-1">2</div>
+                <div className="text-sm text-blue-200 flex items-center justify-center">
+                  <Users className="w-4 h-4 mr-1" />
+                  Collaborations
+                </div>
+              </div>
+            </div>
           </div>
           
           <div className="lg:col-span-4 mt-12 lg:mt-0 fade-in">
