@@ -48,7 +48,7 @@ export default function Navigation() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 no-print ${
-      isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-yellow-200" : "bg-yellow-50/90 shadow-sm"
+      isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200" : "bg-slate-50/90 shadow-sm"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -74,7 +74,7 @@ export default function Navigation() {
                 className={`nav-link text-sm font-semibold transition-all duration-200 hover:text-primary hover:scale-105 ${
                   activeSection === item.href.slice(1) 
                     ? "text-primary active border-b-2 border-primary pb-1" 
-                    : "text-gray-700 hover:text-primary"
+                    : "text-slate-700 hover:text-primary"
                 }`}
               >
                 {item.label}
@@ -98,7 +98,7 @@ export default function Navigation() {
                     className={`text-left text-base font-semibold transition-colors hover:text-primary p-3 rounded-lg ${
                       activeSection === item.href.slice(1) 
                         ? "text-primary bg-blue-50 border-l-4 border-primary" 
-                        : "text-gray-700 hover:bg-gray-50"
+                        : "text-slate-700 hover:bg-slate-50"
                     }`}
                   >
                     {item.label}

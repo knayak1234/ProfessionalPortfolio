@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(60, 20%, 97%);
-  --foreground: hsl(0, 0%, 20%);
-  --muted: hsl(60, 15%, 92%);
-  --muted-foreground: hsl(0, 0%, 45%);
+  --background: hsl(220, 15%, 97%);
+  --foreground: hsl(220, 25%, 15%);
+  --muted: hsl(220, 15%, 94%);
+  --muted-foreground: hsl(220, 10%, 46%);
   --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(0, 0%, 20%);
+  --popover-foreground: hsl(220, 25%, 15%);
   --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(0, 0%, 20%);
-  --border: hsl(60, 15%, 85%);
-  --input: hsl(60, 15%, 90%);
-  --primary: hsl(45, 85%, 35%);
+  --card-foreground: hsl(220, 25%, 15%);
+  --border: hsl(220, 15%, 88%);
+  --input: hsl(220, 15%, 92%);
+  --primary: hsl(221, 83%, 53%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(60, 20%, 88%);
-  --secondary-foreground: hsl(0, 0%, 20%);
-  --accent: hsl(60, 30%, 85%);
-  --accent-foreground: hsl(0, 0%, 20%);
+  --secondary: hsl(220, 15%, 92%);
+  --secondary-foreground: hsl(220, 25%, 15%);
+  --accent: hsl(220, 20%, 90%);
+  --accent-foreground: hsl(220, 25%, 15%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(45, 85%, 35%);
-  --radius: 0.5rem;
+  --ring: hsl(221, 83%, 53%);
+  --radius: 0.75rem;
   
-  /* Academic theme colors - Grey and Yellow */
-  --academic-primary: hsl(45, 85%, 35%);
-  --academic-secondary: hsl(0, 0%, 45%);
-  --academic-accent: hsl(45, 75%, 75%);
-  --academic-light: hsl(60, 30%, 95%);
+  /* Inflection AI inspired colors */
+  --inflection-primary: hsl(221, 83%, 53%);
+  --inflection-secondary: hsl(220, 15%, 85%);
+  --inflection-accent: hsl(250, 100%, 95%);
+  --inflection-neutral: hsl(220, 15%, 97%);
 }
 
 .dark {
@@ -61,10 +61,13 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.015em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 
   .font-serif {
@@ -115,7 +118,7 @@ html {
 
 /* Custom gradient backgrounds */
 .gradient-bg {
-  background: linear-gradient(135deg, hsl(45, 85%, 35%) 0%, hsl(0, 0%, 45%) 100%);
+  background: linear-gradient(135deg, hsl(221, 83%, 53%) 0%, hsl(220, 15%, 85%) 100%);
 }
 
 /* Publication card hover effects */
