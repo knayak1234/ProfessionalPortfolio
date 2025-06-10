@@ -75,6 +75,22 @@ export default function PublicationsSection() {
 
   const recentConferences = [
     {
+      title: "52nd International Symposium on Multiparticle Dynamics (ISMD 2023)",
+      location: "Károly Róbert Campus of MATE in Gyöngyös, Hungary",
+      year: "2023",
+      talk: "Understanding the effect of strangeness and electric charge on the NCQ scaling of directed flow",
+      type: "Talk",
+      date: "August 21-25, 2023"
+    },
+    {
+      title: "10th International Conference on New Frontiers in Physics (ICNFP)",
+      location: "Online Conference",
+      year: "2021",
+      talk: "Collective flow in relativistic heavy-ion collisions (A short review on experimental results)",
+      type: "Talk",
+      date: "August 23, 2021 to October 7, 2021"
+    },
+    {
       title: "Quark Matter 2019",
       location: "Wuhan, China",
       year: "2019",
@@ -86,20 +102,6 @@ export default function PublicationsSection() {
       location: "Hefei, China",
       year: "2018",
       talk: "Using AMPT study: The directed flow in Au+Au collisions at 7.7-200 GeV",
-      type: "Talk",
-    },
-    {
-      title: "Moriond QCD 2017",
-      location: "La Thule, Italy",
-      year: "2017",
-      talk: "Multiplicity dependence of identified particle production in pp collisions with ALICE",
-      type: "Invited",
-    },
-    {
-      title: "ICPAQGP 2015",
-      location: "VECC, Kolkata, India",
-      year: "2015",
-      talk: "High transverse momentum resonance production in pp, p-Pb, Pb-Pb collisions at LHC",
       type: "Talk",
     },
   ];
