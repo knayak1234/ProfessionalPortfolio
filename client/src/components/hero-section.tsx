@@ -65,17 +65,24 @@ export default function HeroSection() {
               STAR and ALICE collaborations.
             </p>
             
-            <div className="flex flex-wrap gap-4 mb-8">
-              <Button onClick={handleDownloadCV} className="bg-white text-primary hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <Download className="w-4 h-4 mr-2" />
-                Download CV
+            <div className="flex flex-wrap gap-6 mb-8">
+              <Button 
+                onClick={handleDownloadCV} 
+                className="group relative bg-gradient-to-r from-white to-blue-50 text-blue-600 hover:from-blue-50 hover:to-white border-2 border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 px-8 py-4 text-lg font-semibold rounded-2xl overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Download className="w-5 h-5 mr-3 transition-transform duration-300 group-hover:scale-110 relative z-10" />
+                <span className="relative z-10">Download CV</span>
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-20 blur transition-opacity duration-300"></div>
               </Button>
               <Button 
                 onClick={scrollToContact}
-                className="bg-green-600 text-white hover:bg-green-700 border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="group relative bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 px-8 py-4 text-lg font-semibold rounded-2xl overflow-hidden"
               >
-                <Mail className="w-4 h-4 mr-2" />
-                Get in Touch
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Mail className="w-5 h-5 mr-3 transition-transform duration-300 group-hover:scale-110 relative z-10" />
+                <span className="relative z-10">Get in Touch</span>
+                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-green-500 rounded-2xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-300"></div>
               </Button>
             </div>
 
