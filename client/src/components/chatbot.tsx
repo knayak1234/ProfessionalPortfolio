@@ -153,7 +153,7 @@ export default function Chatbot() {
           onClick={() => setIsOpen(true)}
           className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 pulse-glow"
         >
-          <Bot className="w-8 h-8 text-white" />
+          <Bot className="w-10 h-10 text-white" />
         </Button>
       </div>
     );
