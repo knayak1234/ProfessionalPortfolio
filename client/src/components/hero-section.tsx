@@ -36,7 +36,7 @@ export default function HeroSection() {
               </Badge>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-serif gradient-text">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-serif hero-gradient-text">
               Dr. Kishora Nayak
             </h1>
             
