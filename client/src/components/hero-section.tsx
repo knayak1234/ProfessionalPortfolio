@@ -6,8 +6,14 @@ import profileImage from "@assets/knayak_pict_1749469261620.jpg";
 
 export default function HeroSection() {
   const handleDownloadCV = () => {
-    // In a real implementation, this would download the actual CV file
-    window.open("/attached_assets/Short_CV_KNayak_1749470083644.pdf", "_blank");
+    // Create a downloadable link for the CV
+    const link = document.createElement('a');
+    link.href = '/attached_assets/Short_CV_KNayak_1749470083644.pdf';
+    link.download = 'Dr_Kishora_Nayak_CV.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const scrollToContact = () => {
