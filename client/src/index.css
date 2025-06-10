@@ -184,13 +184,23 @@ html {
 }
 
 .gradient-text {
-  background: linear-gradient(-45deg, #fbbf24, #f59e0b, #eab308, #facc15, #fde047);
+  background: linear-gradient(-45deg, #1e40af, #2563eb, #3b82f6, #6366f1, #7c3aed);
   background-size: 400% 400%;
   animation: gradient 3s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: brightness(1.2);
+  color: #1e40af; /* Fallback color for browsers that don't support background-clip */
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure gradient text is visible on light backgrounds */
+@supports not (-webkit-background-clip: text) {
+  .gradient-text {
+    color: #1e40af;
+    font-weight: 800;
+  }
 }
 
 /* Typing animation */
