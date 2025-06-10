@@ -85,10 +85,10 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-gray-50">
+    <section id="contact" className="section-padding bg-gradient-to-br from-gray-50 to-blue-50 particles">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif">Get in Touch</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif gradient-text">Get in Touch</h2>
           <p className="text-xl text-muted-foreground">
             Connect for research collaborations, academic discussions, or institutional partnerships
           </p>
@@ -97,14 +97,14 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="fade-in">
-            <Card className="mb-8">
+            <Card className="mb-8 research-card hover:glow-border">
               <CardHeader>
                 <CardTitle className="text-2xl font-serif">Contact Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                    <University className="w-6 h-6 text-primary-foreground" />
+                <div className="flex items-start space-x-4 group">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <University className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Institution</h4>
