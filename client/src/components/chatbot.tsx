@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { MessageCircle, X, Send, Bot, User, Minimize2, Maximize2 } from "lucide-react";
+import { MessageCircle, X, Send, Bot, User, Minimize2, Maximize2, Zap } from "lucide-react";
 
 interface Message {
   id: string;
@@ -153,7 +153,7 @@ export default function Chatbot() {
           onClick={() => setIsOpen(true)}
           className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 pulse-glow"
         >
-          <MessageCircle className="w-8 h-8 text-white" />
+          <Bot className="w-8 h-8 text-white" />
         </Button>
       </div>
     );
