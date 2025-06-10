@@ -203,9 +203,9 @@ html {
   }
 }
 
-/* Hero title gradient with white colors for dark backgrounds */
+/* Hero title gradient with white and yellow colors for dark backgrounds */
 .hero-gradient-text {
-  background: linear-gradient(-45deg, #ffffff, #e2e8f0, #cbd5e1, #94a3b8, #64748b);
+  background: linear-gradient(-45deg, #ffffff, #fbbf24, #facc15, #fde047, #ffffff, #e2e8f0);
   background-size: 400% 400%;
   animation: gradient 3s ease infinite;
   -webkit-background-clip: text;
