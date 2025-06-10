@@ -134,7 +134,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                    <p className="text-muted-foreground">+91 XXXXX XXXXX</p>
+                    <p className="text-muted-foreground">+91 9938735081</p>
                     <p className="text-sm text-muted-foreground">Office hours: 9:00 AM - 5:00 PM</p>
                   </div>
                 </div>
@@ -146,15 +146,38 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Professional Profiles</h4>
                     <div className="space-y-1">
-                      <p className="text-primary hover:text-primary/80 cursor-pointer text-sm">
-                        ORCID: 0000-0000-0000-0000
-                      </p>
-                      <p className="text-primary hover:text-primary/80 cursor-pointer text-sm">
+                      <a 
+                        href="https://orcid.org/0000-0003-1942-317X" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 cursor-pointer text-sm block"
+                      >
+                        ORCID: 0000-0003-1942-317X
+                      </a>
+                      <a 
+                        href="https://www.researchgate.net/profile/Kishora-Nayak" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 cursor-pointer text-sm block"
+                      >
                         ResearchGate Profile
-                      </p>
-                      <p className="text-primary hover:text-primary/80 cursor-pointer text-sm">
+                      </a>
+                      <a 
+                        href="https://scholar.google.com/citations?user=QKxNOywAAAAJ" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 cursor-pointer text-sm block"
+                      >
                         Google Scholar
-                      </p>
+                      </a>
+                      <a 
+                        href="https://vidwan.inflibnet.ac.in/profile/175255" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 cursor-pointer text-sm block"
+                      >
+                        Vidwan Profile
+                      </a>
                     </div>
                   </div>
                 </div>
