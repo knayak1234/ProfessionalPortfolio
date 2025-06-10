@@ -5,9 +5,10 @@ import { BookOpen, Users, Award, ExternalLink, Globe, Presentation, Calendar, Gr
 
 export default function PublicationsSection() {
   const publicationStats = [
-    { number: "150+", label: "Total Publications", icon: BookOpen, color: "bg-blue-500" },
-    { number: "16", label: "Conference Papers", icon: Presentation, color: "bg-purple-500" },
-    { number: "11", label: "Invited Talks", icon: Globe, color: "bg-orange-500" },
+    { number: "150+", label: "Total Publications", icon: BookOpen, color: "from-blue-500 to-blue-600", impact: "High" },
+    { number: "16", label: "Conference Papers", icon: Presentation, color: "from-purple-500 to-purple-600", impact: "International" },
+    { number: "11", label: "Invited Talks", icon: Globe, color: "from-orange-500 to-orange-600", impact: "Global" },
+    { number: "2.5K+", label: "Total Citations", icon: TrendingUp, color: "from-green-500 to-green-600", impact: "Research Impact" },
   ];
 
   const selectedPublications = [
@@ -107,10 +108,10 @@ export default function PublicationsSection() {
   ];
 
   return (
-    <section id="publications" className="section-padding bg-gray-50">
+    <section id="publications" className="section-padding bg-gradient-to-br from-gray-50 to-slate-100 particles">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif">Publications & Presentations</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif gradient-text">Publications & Presentations</h2>
           <p className="text-xl text-muted-foreground">
             Peer-reviewed research contributions and international conference presentations
           </p>
@@ -119,13 +120,14 @@ export default function PublicationsSection() {
         {/* Publication Statistics */}
         <div className="grid md:grid-cols-4 gap-6 mb-16 fade-in">
           {publicationStats.map((stat, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+            <Card key={index} className={`text-center research-card glow hover:glow-border stagger-${index + 1} group`}>
               <CardContent className="p-6">
-                <div className={`w-12 h-12 ${stat.color} text-white rounded-full flex items-center justify-center mx-auto mb-4`}>
-                  <stat.icon className="w-6 h-6" />
+                <div className={`w-16 h-16 bg-gradient-to-r ${stat.color} text-white rounded-full flex items-center justify-center mx-auto mb-4 float group-hover:scale-110 transition-transform duration-300`}>
+                  <stat.icon className="w-8 h-8" />
                 </div>
-                <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
-                <div className="text-muted-foreground font-medium">{stat.label}</div>
+                <div className="text-3xl font-bold stat-number mb-2 counter">{stat.number}</div>
+                <div className="text-muted-foreground font-medium mb-2">{stat.label}</div>
+                <Badge variant="outline" className="text-xs">{stat.impact}</Badge>
               </CardContent>
             </Card>
           ))}
@@ -136,36 +138,53 @@ export default function PublicationsSection() {
           <h3 className="text-2xl font-semibold text-foreground mb-8 font-serif gradient-text">Selected Publications</h3>
           <div className="space-y-6">
             {selectedPublications.map((pub, index) => (
-              <Card key={index} className={`publication-card dynamic-card fade-in stagger-${index + 1}`}>
+              <Card key={index} className={`publication-card research-card reveal group cursor-pointer stagger-${index + 1}`}>
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
-                    <Badge className={`${pub.color} text-xs px-2 py-1`}>{pub.type}</Badge>
-                    <span className="text-sm text-muted-foreground">{pub.year}</span>
+                    <div className="flex items-center space-x-2">
+                      <Badge className={`${pub.color} text-xs px-2 py-1`}>{pub.type}</Badge>
+                      {pub.type === "First Author" && <Star className="w-4 h-4 text-yellow-500" />}
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-sm text-muted-foreground">{pub.year}</span>
+                      <Badge variant="outline" className="text-xs">{pub.collaboration}</Badge>
+                    </div>
                   </div>
                   
-                  <h4 className="text-lg font-semibold text-foreground mb-3 leading-relaxed">
+                  <h4 className="text-lg font-semibold text-foreground mb-3 leading-relaxed group-hover:text-primary transition-colors">
                     "{pub.title}"
                   </h4>
                   
-                  <p className="text-muted-foreground mb-2">
+                  <p className="text-muted-foreground mb-4">
                     <span className="font-medium">{pub.authors}</span>
                   </p>
                   
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-2">
                     <p className="text-sm text-muted-foreground">
                       <span className="italic">{pub.journal}</span>{" "}
                       <span className="font-mono">{pub.volume}</span>, {pub.pages} ({pub.year})
                     </p>
-                    {pub.doi && (
-                      <a 
-                        href={pub.doi} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200 scale-hover"
-                      >
-                        DOI →
-                      </a>
-                    )}
+                  </div>
+
+                  <div className="reveal-content flex items-center justify-between pt-3 border-t border-gray-100">
+                    <div className="flex items-center space-x-4">
+                      <Button variant="outline" size="sm" className="group-hover:bg-primary group-hover:text-white transition-colors">
+                        <Quote className="w-4 h-4 mr-2" />
+                        Cite
+                      </Button>
+                      {pub.doi && (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={pub.doi} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            DOI
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                    <Button variant="ghost" size="sm" className="group-hover:bg-blue-50 transition-colors">
+                      <Eye className="w-4 h-4 mr-2" />
+                      View Abstract
+                    </Button>
                   </div>
                 </CardContent>
               </Card>

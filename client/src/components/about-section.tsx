@@ -69,16 +69,18 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="section-padding bg-gray-50">
+    <section id="about" className="section-padding bg-gradient-to-br from-slate-50 to-gray-100 particles">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif">About Dr. Nayak</h2>
-          <p className="text-xl text-muted-foreground w-full mx-auto leading-relaxed px-4">
-            Experimental physicist with extensive international research experience. He currently serves as Assistant Professor (OES-I) in the P.G. Department of Physics at Panchayat College Bargarh, affiliated with Sambalpur University, Odisha.
-          </p>
-          <p className="text-lg text-muted-foreground w-full mx-auto mt-6 leading-relaxed px-4">
-            His research focuses on understanding the QCD Phase Diagram and medium dynamics of Quark-Gluon Plasma (QGP) formed in relativistic heavy-ion collisions. He has contributed to groundbreaking discoveries through his work with STAR and ALICE collaborations at RHIC, USA and LHC, Switzerland.
-          </p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif gradient-text">About Dr. Nayak</h2>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-xl text-muted-foreground leading-relaxed px-4 mb-6">
+              Experimental physicist with extensive international research experience. He currently serves as Assistant Professor (OES-I) in the P.G. Department of Physics at Panchayat College Bargarh, affiliated with Sambalpur University, Odisha.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed px-4">
+              His research focuses on understanding the QCD Phase Diagram and medium dynamics of Quark-Gluon Plasma (QGP) formed in relativistic heavy-ion collisions. He has contributed to groundbreaking discoveries through his work with STAR and ALICE collaborations at RHIC, USA and LHC, Switzerland.
+            </p>
+          </div>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8">
@@ -118,17 +120,22 @@ export default function AboutSection() {
             {/* Education Timeline */}
             <div className="space-y-4">
               {education.map((item, index) => (
-                <Card key={index}>
+                <Card key={index} className="timeline-item research-card hover:glow-border group">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <item.icon className="w-6 h-6" />
+                      </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-foreground">{item.degree}</h4>
+                        <h4 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors">{item.degree}</h4>
                         <p className="text-primary font-medium">{item.institution}</p>
-                        <div className="flex items-center justify-between mt-2">
-                          <span className="text-sm text-muted-foreground">{item.period}</span>
+                        <div className="flex items-center justify-between mt-3">
+                          <div className="flex items-center space-x-2">
+                            <Calendar className="w-4 h-4 text-muted-foreground" />
+                            <span className="text-sm text-muted-foreground">{item.period}</span>
+                          </div>
                           {item.note && (
-                            <Badge variant="outline" className="text-xs">
+                            <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200">
                               {item.note}
                             </Badge>
                           )}
