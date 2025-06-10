@@ -60,13 +60,13 @@ export default function HeroSection() {
             </p>
             
             <div className="flex flex-wrap gap-4 mb-8">
-              <Button onClick={handleDownloadCV} className="bg-white text-primary hover:bg-gray-100">
+              <Button onClick={handleDownloadCV} className="bg-white text-primary hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <Download className="w-4 h-4 mr-2" />
                 Download CV
               </Button>
               <Button 
                 onClick={scrollToContact}
-                className="bg-green-600 text-white hover:bg-green-700 border-0"
+                className="bg-green-600 text-white hover:bg-green-700 border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 <Mail className="w-4 h-4 mr-2" />
                 Get in Touch
