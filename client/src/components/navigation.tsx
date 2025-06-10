@@ -48,36 +48,46 @@ export default function Navigation() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 no-print ${
-      isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200" : "bg-white/90 shadow-sm"
+      isScrolled 
+        ? "bg-gradient-to-r from-white/95 via-blue-50/95 to-white/95 backdrop-blur-md shadow-xl border-b border-blue-200/50" 
+        : "bg-gradient-to-r from-white/90 via-blue-50/80 to-white/90 shadow-lg border-b border-blue-100/30"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Title */}
-          <div className="flex items-center space-x-3">
-            <img 
-              src={logoImage} 
-              alt="Panchayat College Logo" 
-              className="h-10 w-10 object-contain rounded-full"
-            />
-            <div>
-              <div className="font-semibold text-lg text-primary">Dr. Kishora Nayak</div>
-              <div className="text-xs text-gray-700">Panchayat College</div>
+          <div className="flex items-center space-x-4">
+            <div className="relative">
+              <img 
+                src={logoImage} 
+                alt="Panchayat College Logo" 
+                className="h-12 w-12 object-contain rounded-full shadow-lg ring-2 ring-blue-200 hover:ring-blue-400 transition-all duration-300 hover:scale-110"
+              />
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full opacity-20 animate-pulse"></div>
+            </div>
+            <div className="flex flex-col">
+              <div className="font-bold text-xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent animate-gradient-x hover:scale-105 transition-transform duration-300">
+                Dr. Kishora Nayak
+              </div>
+              <div className="text-sm font-medium bg-gradient-to-r from-gray-600 to-blue-500 bg-clip-text text-transparent">
+                Experimental Physics • QCD Research
+              </div>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-2">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`nav-link text-base font-semibold transition-all duration-300 hover:text-primary scale-hover relative group ${
+                className={`nav-link px-4 py-2 text-base font-semibold transition-all duration-300 rounded-lg relative group overflow-hidden ${
                   activeSection === item.href.slice(1) 
-                    ? "text-primary active border-b-2 border-primary pb-1" 
-                    : "text-gray-700 hover:text-primary"
+                    ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg transform scale-105" 
+                    : "text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:shadow-lg hover:scale-105"
                 }`}
               >
-                {item.label}
+                <span className="relative z-10">{item.label}</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               </button>
             ))}
           </div>
