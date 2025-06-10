@@ -69,7 +69,7 @@ export default function Navigation() {
                 Dr. Kishora Nayak
               </div>
               <div className="text-sm font-medium bg-gradient-to-r from-gray-600 to-blue-500 bg-clip-text text-transparent">
-                Experimental Physics • QCD Research
+                High Energy Physicist
               </div>
             </div>
           </div>
