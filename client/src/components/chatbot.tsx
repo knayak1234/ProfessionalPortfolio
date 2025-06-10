@@ -18,7 +18,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: "Hello! I'm Dr. Nayak's research assistant. I can help you learn about his work in experimental physics, QCD Phase Diagram research, and Quark-Gluon Plasma studies. What would you like to know?",
+      content: "Hello! I'm Dr. Nayak's research assistant. I can help you learn about his work in experimental physics, QCD Phase Diagram research, and Quark-Gluon Plasma studies. You can ask me about his publications, research areas, teaching experience, or contact information.",
       role: 'assistant',
       timestamp: new Date()
     }
@@ -35,6 +35,41 @@ export default function Chatbot() {
     scrollToBottom();
   }, [messages]);
 
+  // Knowledge base for fallback responses
+  const getKnowledgeResponse = (query: string): string => {
+    const lowerQuery = query.toLowerCase();
+    
+    if (lowerQuery.includes('research') || lowerQuery.includes('qcd') || lowerQuery.includes('plasma')) {
+      return "Dr. Nayak's research focuses on:\n\n• QCD Phase Diagram studies\n• Quark-Gluon Plasma dynamics in relativistic heavy-ion collisions\n• Flow measurements of identified hadrons and high-pT particles\n• STAR Collaboration at RHIC, BNL\n• ALICE Collaboration at LHC, CERN\n\nHis work contributes to understanding the fundamental properties of matter under extreme conditions.";
+    }
+    
+    if (lowerQuery.includes('publication') || lowerQuery.includes('paper') || lowerQuery.includes('journal')) {
+      return "Dr. Nayak has 150+ publications including:\n\n• \"Coalescence sum rule and the electric charge- and strangeness-dependences of directed flow\" (Physics Letters B, 2024)\n• \"First observation of the directed flow of D⁰ and D̄⁰ in Au+Au collisions\" (Physical Review Letters, 2019)\n• Research on multi-strange hadrons in Nature Physics\n\nYou can view his complete publication list on Google Scholar or ORCID: 0000-0003-1942-317X";
+    }
+    
+    if (lowerQuery.includes('teaching') || lowerQuery.includes('course') || lowerQuery.includes('student')) {
+      return "Dr. Nayak teaches:\n\n• Nuclear & Particle Physics (MSc)\n• Classical Mechanics & Statistical Mechanics\n• Modern Physics & Computer Programming\n• Optics\n\nHe supervises PhD students as an official guide at Sambalpur University and has guided 50+ students in research projects.";
+    }
+    
+    if (lowerQuery.includes('contact') || lowerQuery.includes('email') || lowerQuery.includes('phone')) {
+      return "Contact Dr. Kishora Nayak:\n\n📧 Email: k.nayak1234@gmail.com\n📞 Phone: +91 9938735081\n🏢 P.G. Department of Physics\n   Panchayat College Bargarh\n   Sambalpur University, Odisha\n\n⏰ Office Hours: Mon-Fri 10AM-4PM, Sat 10AM-1PM";
+    }
+    
+    if (lowerQuery.includes('award') || lowerQuery.includes('recognition')) {
+      return "Dr. Nayak's recent recognition:\n\n🏆 Odisha Physical Society Young Scientist Award (2024)\n\nHe has also received significant research funding:\n• China Post-doctoral Science Foundation (₹10,00,000)\n• Mukhyamantri Research & Innovation Grant (₹9,00,000)";
+    }
+    
+    if (lowerQuery.includes('collaboration') || lowerQuery.includes('star') || lowerQuery.includes('alice')) {
+      return "Dr. Nayak collaborates with:\n\n🔬 STAR Collaboration at RHIC, Brookhaven National Laboratory, USA\n🔬 ALICE Collaboration at LHC, CERN, Switzerland\n\nHe has extensive international experience at CERN, INFN Catania (Italy), and Institute of Modern Physics, CCNU (China).";
+    }
+    
+    if (lowerQuery.includes('education') || lowerQuery.includes('phd') || lowerQuery.includes('degree')) {
+      return "Dr. Nayak's Education:\n\n🎓 PhD in Experimental High-Energy and Nuclear Physics\n   NISER, Odisha (2012-2018)\n🎓 MSc Physics (Particle Physics Specialization)\n   Utkal University, 1st Class (2010-2012)\n🎓 BSc Physics\n   Panchayat College, 1st Class Distinction, University Topper (2007-2010)";
+    }
+    
+    return "I can help you learn about Dr. Nayak's:\n\n• Research in QCD and Quark-Gluon Plasma\n• Publications and academic work\n• Teaching and courses\n• Contact information\n• Awards and recognition\n• International collaborations\n• Educational background\n\nPlease ask a specific question about any of these topics!";
+  };
+
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
@@ -46,6 +81,7 @@ export default function Chatbot() {
     };
 
     setMessages(prev => [...prev, userMessage]);
+    const currentInput = input;
     setInput('');
     setIsLoading(true);
 
@@ -56,8 +92,8 @@ export default function Chatbot() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: input,
-          history: messages.slice(-5) // Send last 5 messages for context
+          message: currentInput,
+          history: messages.slice(-5)
         }),
       });
 
@@ -77,13 +113,16 @@ export default function Chatbot() {
       setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
       console.error('Chat error:', error);
-      const errorMessage: Message = {
+      
+      // Use knowledge base as fallback
+      const fallbackResponse = getKnowledgeResponse(currentInput);
+      const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: "I apologize, but I'm having trouble responding right now. Please try asking your question again or contact Dr. Nayak directly.",
+        content: fallbackResponse,
         role: 'assistant',
         timestamp: new Date()
       };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages(prev => [...prev, assistantMessage]);
     } finally {
       setIsLoading(false);
     }
