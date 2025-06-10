@@ -149,12 +149,30 @@ export default function Chatbot() {
   if (!isOpen) {
     return (
       <div className="fixed bottom-6 right-6 z-50">
-        <Button
-          onClick={() => setIsOpen(true)}
-          className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 pulse-glow"
-        >
-          <Bot className="w-10 h-10 text-white" />
-        </Button>
+        <div className="relative">
+          <Button
+            onClick={() => setIsOpen(true)}
+            className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 hover:from-blue-600 hover:via-blue-700 hover:to-indigo-800 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 pulse-glow border-2 border-white/20"
+          >
+            <div className="relative">
+              {/* Chat bubble background */}
+              <div className="w-10 h-8 bg-white rounded-2xl flex items-center justify-center relative">
+                {/* Bot eyes */}
+                <div className="flex space-x-1">
+                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                </div>
+                {/* Small antenna */}
+                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                  <div className="w-0.5 h-2 bg-white"></div>
+                  <div className="w-1 h-1 bg-white rounded-full -mt-0.5 mx-auto"></div>
+                </div>
+              </div>
+              {/* Chat tail */}
+              <div className="absolute -bottom-1 left-2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
+            </div>
+          </Button>
+        </div>
       </div>
     );
   }
