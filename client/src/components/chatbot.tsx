@@ -35,39 +35,92 @@ export default function Chatbot() {
     scrollToBottom();
   }, [messages]);
 
-  // Knowledge base for fallback responses
+  // Enhanced knowledge base for more specific responses
   const getKnowledgeResponse = (query: string): string => {
     const lowerQuery = query.toLowerCase();
     
-    if (lowerQuery.includes('research') || lowerQuery.includes('qcd') || lowerQuery.includes('plasma')) {
-      return "Dr. Nayak's research focuses on:\n\n• QCD Phase Diagram studies\n• Quark-Gluon Plasma dynamics in relativistic heavy-ion collisions\n• Flow measurements of identified hadrons and high-pT particles\n• STAR Collaboration at RHIC, BNL\n• ALICE Collaboration at LHC, CERN\n\nHis work contributes to understanding the fundamental properties of matter under extreme conditions.";
+    // Greeting responses
+    if (lowerQuery.includes('hello') || lowerQuery.includes('hi') || lowerQuery.includes('hey')) {
+      return "Hello! I'm here to help you learn about Dr. Kishora Nayak's research in experimental physics. You can ask me about his QCD studies, publications, teaching, or any other aspect of his academic work.";
     }
     
-    if (lowerQuery.includes('publication') || lowerQuery.includes('paper') || lowerQuery.includes('journal')) {
-      return "Dr. Nayak has 150+ publications including:\n\n• \"Coalescence sum rule and the electric charge- and strangeness-dependences of directed flow\" (Physics Letters B, 2024)\n• \"First observation of the directed flow of D⁰ and D̄⁰ in Au+Au collisions\" (Physical Review Letters, 2019)\n• Research on multi-strange hadrons in Nature Physics\n\nYou can view his complete publication list on Google Scholar or ORCID: 0000-0003-1942-317X";
+    // Specific research topics
+    if (lowerQuery.includes('qcd') && lowerQuery.includes('phase')) {
+      return "Dr. Nayak specializes in QCD Phase Diagram research, focusing on:\n\n• Understanding phase transitions in strongly interacting matter\n• Mapping the QCD phase boundary between hadronic matter and quark-gluon plasma\n• Studying the critical point in the QCD phase diagram\n• Experimental verification of theoretical predictions\n\nThis work helps us understand how matter behaved in the early universe microseconds after the Big Bang.";
     }
     
-    if (lowerQuery.includes('teaching') || lowerQuery.includes('course') || lowerQuery.includes('student')) {
-      return "Dr. Nayak teaches:\n\n• Nuclear & Particle Physics (MSc)\n• Classical Mechanics & Statistical Mechanics\n• Modern Physics & Computer Programming\n• Optics\n\nHe supervises PhD students as an official guide at Sambalpur University and has guided 50+ students in research projects.";
+    if (lowerQuery.includes('quark') && lowerQuery.includes('gluon')) {
+      return "Dr. Nayak's Quark-Gluon Plasma research involves:\n\n• Creating QGP in relativistic heavy-ion collisions at temperatures >2 trillion Kelvin\n• Studying medium dynamics and transport properties\n• Measuring collective flow patterns to understand QGP properties\n• Analyzing how quarks and gluons behave in this primordial state of matter\n\nThis research recreates conditions from the first microseconds after the Big Bang!";
     }
     
-    if (lowerQuery.includes('contact') || lowerQuery.includes('email') || lowerQuery.includes('phone')) {
-      return "Contact Dr. Kishora Nayak:\n\n📧 Email: k.nayak1234@gmail.com\n📞 Phone: +91 9938735081\n🏢 P.G. Department of Physics\n   Panchayat College Bargarh\n   Sambalpur University, Odisha\n\n⏰ Office Hours: Mon-Fri 10AM-4PM, Sat 10AM-1PM";
+    if (lowerQuery.includes('flow') || lowerQuery.includes('elliptic') || lowerQuery.includes('directed')) {
+      return "Flow measurements are Dr. Nayak's specialty:\n\n• Directed flow (v1): Measures sideward deflection of particles\n• Elliptic flow (v2): Indicates collective motion and medium properties\n• Studies flow of identified hadrons (protons, kaons, pions)\n• High-pT charged particle flow analysis\n• Light nuclei flow measurements\n\nThese measurements reveal how the QGP medium responds to initial collision geometry.";
     }
     
-    if (lowerQuery.includes('award') || lowerQuery.includes('recognition')) {
-      return "Dr. Nayak's recent recognition:\n\n🏆 Odisha Physical Society Young Scientist Award (2024)\n\nHe has also received significant research funding:\n• China Post-doctoral Science Foundation (₹10,00,000)\n• Mukhyamantri Research & Innovation Grant (₹9,00,000)";
+    // Collaborations with more detail
+    if (lowerQuery.includes('star') && !lowerQuery.includes('collaboration')) {
+      return "STAR (Solenoidal Tracker at RHIC) Collaboration:\n\n• Located at Brookhaven National Laboratory, USA\n• Studies Au+Au collisions at various energies\n• Dr. Nayak contributes to flow measurements and QGP studies\n• Focus on beam energy scan program\n• Searching for the QCD critical point\n\nSTAR has been instrumental in discovering the strongly coupled QGP.";
     }
     
-    if (lowerQuery.includes('collaboration') || lowerQuery.includes('star') || lowerQuery.includes('alice')) {
-      return "Dr. Nayak collaborates with:\n\n🔬 STAR Collaboration at RHIC, Brookhaven National Laboratory, USA\n🔬 ALICE Collaboration at LHC, CERN, Switzerland\n\nHe has extensive international experience at CERN, INFN Catania (Italy), and Institute of Modern Physics, CCNU (China).";
+    if (lowerQuery.includes('alice') && !lowerQuery.includes('collaboration')) {
+      return "ALICE (A Large Ion Collider Experiment) at LHC:\n\n• Based at CERN, Switzerland\n• Studies Pb+Pb collisions at highest energies\n• Dr. Nayak worked on multiplicity dependence studies\n• Research on multi-strange hadron production\n• High-pT resonance studies in various collision systems\n\nALICE studies QGP at the highest temperatures ever achieved in laboratory.";
     }
     
-    if (lowerQuery.includes('education') || lowerQuery.includes('phd') || lowerQuery.includes('degree')) {
-      return "Dr. Nayak's Education:\n\n🎓 PhD in Experimental High-Energy and Nuclear Physics\n   NISER, Odisha (2012-2018)\n🎓 MSc Physics (Particle Physics Specialization)\n   Utkal University, 1st Class (2010-2012)\n🎓 BSc Physics\n   Panchayat College, 1st Class Distinction, University Topper (2007-2010)";
+    // Specific publications
+    if (lowerQuery.includes('coalescence') || lowerQuery.includes('strangeness')) {
+      return "Recent breakthrough publication (2024):\n\n\"Coalescence sum rule and the electric charge- and strangeness-dependences of directed flow in heavy ion collisions\"\n\n• Published in Physics Letters B\n• First author: Dr. Nayak\n• Explores how particle formation depends on electric charge and strangeness\n• Provides new insights into QGP hadronization\n• Bridges theory and experimental observations";
     }
     
-    return "I can help you learn about Dr. Nayak's:\n\n• Research in QCD and Quark-Gluon Plasma\n• Publications and academic work\n• Teaching and courses\n• Contact information\n• Awards and recognition\n• International collaborations\n• Educational background\n\nPlease ask a specific question about any of these topics!";
+    if (lowerQuery.includes('d meson') || lowerQuery.includes('charm')) {
+      return "Landmark discovery (Physical Review Letters, 2019):\n\n\"First observation of the directed flow of D⁰ and D̄⁰ in Au+Au collisions\"\n\n• Historic first measurement of charm quark flow\n• Demonstrates thermalization of heavy quarks in QGP\n• Shows charm quarks participate in collective motion\n• Major breakthrough in understanding QGP properties\n• Featured as editor's suggestion in PRL";
+    }
+    
+    // Teaching specifics
+    if (lowerQuery.includes('nuclear physics') || lowerQuery.includes('particle physics')) {
+      return "Dr. Nayak teaches Nuclear & Particle Physics at MSc level:\n\n• Quantum mechanics applied to nuclear systems\n• Radioactivity and nuclear reactions\n• Particle accelerators and detection methods\n• Standard Model of particle physics\n• Experimental techniques in high-energy physics\n• Current research frontiers in the field\n\nHe brings real research experience from CERN and major collaborations into the classroom.";
+    }
+    
+    if (lowerQuery.includes('classical mechanics')) {
+      return "Classical Mechanics course covers:\n\n• Lagrangian and Hamiltonian formulations\n• Central force problems and orbital mechanics\n• Rigid body dynamics and rotational motion\n• Small oscillations and normal modes\n• Advanced mathematical methods in physics\n• Connections to modern physics concepts\n\nDr. Nayak emphasizes the mathematical foundations essential for advanced physics.";
+    }
+    
+    // Experience and background
+    if (lowerQuery.includes('cern') || lowerQuery.includes('switzerland')) {
+      return "Dr. Nayak's CERN experience (2014-2017):\n\n• Visiting scientist at ALICE experiment\n• Worked on Large Hadron Collider physics\n• Gained expertise in large-scale detector systems\n• Collaborated with international physics community\n• Contributed to understanding of QGP at LHC energies\n\nThis experience shaped his research approach and international perspective.";
+    }
+    
+    if (lowerQuery.includes('china') || lowerQuery.includes('postdoc')) {
+      return "Post-doctoral research in China (2018-2021):\n\n• Institute of Modern Physics, Central China Normal University\n• Theoretical and computational QGP studies\n• Developed advanced analysis techniques\n• China Post-doctoral Science Foundation funding\n• Bridged experimental and theoretical approaches\n\nThis period expanded his research toolkit beyond experimental work.";
+    }
+    
+    // Administrative roles
+    if (lowerQuery.includes('coordinator') || lowerQuery.includes('computer science')) {
+      return "Administrative leadership at Panchayat College:\n\n• Coordinator of Computer Science (Self-Financing) Department\n• Overseeing curriculum development and modernization\n• Managing faculty recruitment and student affairs\n• Implementing quality enhancement initiatives\n• Bridging physics and computational sciences\n\nCombining his computational physics background with administrative duties.";
+    }
+    
+    if (lowerQuery.includes('iqac') || lowerQuery.includes('quality')) {
+      return "IQAC (Internal Quality Assurance Cell) member:\n\n• Contributing to institutional accreditation processes\n• Developing quality benchmarks for academic programs\n• Implementing best practices in higher education\n• Fostering research culture in the institution\n• Ensuring continuous improvement in education quality\n\nWorking to elevate the overall academic standards of the college.";
+    }
+    
+    // General categories with more specificity
+    if (lowerQuery.includes('research') || lowerQuery.includes('work')) {
+      return "Dr. Nayak's research spans experimental and theoretical physics:\n\n• QCD Phase Diagram mapping through heavy-ion collisions\n• Quark-Gluon Plasma medium property studies\n• Collective flow measurements in STAR and ALICE\n• Multi-strange hadron production mechanisms\n• Charm quark thermalization in hot matter\n• Advanced data analysis and computational methods\n\nHis work contributes to understanding the fundamental structure of matter.";
+    }
+    
+    if (lowerQuery.includes('publication') || lowerQuery.includes('paper')) {
+      return "Dr. Nayak's 150+ publications span top-tier journals:\n\n• Physics Letters B, Physical Review Letters (first author works)\n• Nature Physics (multi-strange hadron studies)\n• Physical Review C (theoretical collaborations)\n• Nuclear Physics A (experimental results)\n• Conference proceedings from major international meetings\n\nHis work has significant impact in the QGP research community.";
+    }
+    
+    if (lowerQuery.includes('teaching') || lowerQuery.includes('course')) {
+      return "Dr. Nayak's teaching portfolio includes:\n\n• Nuclear & Particle Physics (MSc level)\n• Classical and Statistical Mechanics\n• Modern Physics and quantum concepts\n• Computer Programming for physics applications\n• Optics and electromagnetic theory\n• Research methodology and data analysis\n\nHe mentors students from undergraduate to PhD levels.";
+    }
+    
+    if (lowerQuery.includes('contact') || lowerQuery.includes('reach')) {
+      return "Contact Dr. Kishora Nayak:\n\n📧 k.nayak1234@gmail.com\n📞 +91 9938735081\n🏢 P.G. Department of Physics, Panchayat College Bargarh\n🎓 Sambalpur University, Odisha, India\n\n⏰ Office Hours:\n• Monday-Friday: 10:00 AM - 4:00 PM\n• Saturday: 10:00 AM - 1:00 PM\n\nBest to email in advance for appointments.";
+    }
+    
+    // Default response with more engaging options
+    return "I'm here to help you learn about Dr. Nayak's work! Try asking about:\n\n🔬 \"What is QCD Phase Diagram research?\"\n⚛️ \"Tell me about Quark-Gluon Plasma\"\n📊 \"What are flow measurements?\"\n🏆 \"What awards has he received?\"\n📚 \"What courses does he teach?\"\n🌍 \"Tell me about CERN experience\"\n📧 \"How can I contact him?\"\n\nI have detailed information about all aspects of his academic career!";
   };
 
   const handleSend = async () => {
