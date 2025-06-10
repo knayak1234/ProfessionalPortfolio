@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Users, Award, ExternalLink, Globe, Presentation, Calendar, GraduationCap } from "lucide-react";
+import { BookOpen, Users, Award, ExternalLink, Globe, Presentation, Calendar, GraduationCap, TrendingUp, Quote, Download, Eye, Star } from "lucide-react";
 
 export default function PublicationsSection() {
   const publicationStats = [

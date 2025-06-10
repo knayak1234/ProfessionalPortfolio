@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Atom, Flame, BarChart3, Globe, DollarSign, Users, GraduationCap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Atom, Flame, BarChart3, Globe, DollarSign, Users, GraduationCap, Target, Zap, TrendingUp, Eye, Play, ExternalLink } from "lucide-react";
 
 export default function ResearchSection() {
   const researchAreas = [
@@ -9,19 +10,35 @@ export default function ResearchSection() {
       description: "Understanding the fundamental properties of Quantum Chromodynamics through experimental investigation of phase transitions in strongly interacting matter.",
       icon: Atom,
       color: "bg-blue-500",
+      impact: "High",
+      publications: "25+",
+      progress: 85,
     },
     {
       title: "Quark-Gluon Plasma",
       description: "Investigating medium dynamics and properties of Quark-Gluon Plasma formed in relativistic heavy-ion collisions at RHIC and LHC energies.",
       icon: Flame,
       color: "bg-orange-500",
+      impact: "Critical",
+      publications: "40+",
+      progress: 92,
     },
     {
       title: "Flow Measurements",
       description: "Directed and elliptic flow studies of identified hadrons, high-pT charged particles, and light nuclei in heavy-ion collisions.",
       icon: BarChart3,
       color: "bg-green-500",
+      impact: "Significant",
+      publications: "30+",
+      progress: 78,
     },
+  ];
+
+  const researchStats = [
+    { number: "150+", label: "Total Publications", icon: Target, color: "from-blue-500 to-blue-600" },
+    { number: "5+", label: "Years Experience", icon: TrendingUp, color: "from-green-500 to-green-600" },
+    { number: "2", label: "Major Collaborations", icon: Users, color: "from-purple-500 to-purple-600" },
+    { number: "₹19L", label: "Research Funding", icon: DollarSign, color: "from-orange-500 to-orange-600" },
   ];
 
   const collaborations = [
@@ -57,27 +74,70 @@ export default function ResearchSection() {
   ];
 
   return (
-    <section id="research" className="section-padding bg-background">
+    <section id="research" className="section-padding bg-gradient-to-br from-slate-50 to-blue-50 particles">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif">Research Focus</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-serif gradient-text">Research Focus</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Exploring the fundamental properties of matter under extreme conditions through experimental high-energy physics
           </p>
+        </div>
+
+        {/* Research Statistics */}
+        <div className="grid md:grid-cols-4 gap-6 mb-16 fade-in">
+          {researchStats.map((stat, index) => (
+            <Card key={index} className={`text-center research-card glow hover:glow-border stagger-${index + 1}`}>
+              <CardContent className="p-6">
+                <div className={`w-16 h-16 bg-gradient-to-r ${stat.color} text-white rounded-full flex items-center justify-center mx-auto mb-4 float`}>
+                  <stat.icon className="w-8 h-8" />
+                </div>
+                <div className="text-3xl font-bold stat-number mb-2 counter">{stat.number}</div>
+                <div className="text-muted-foreground font-medium">{stat.label}</div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
         
         {/* Research Areas */}
         <div className="grid lg:grid-cols-3 gap-8 mb-16 fade-in">
           {researchAreas.map((area, index) => (
-            <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <Card key={index} className="research-card reveal group cursor-pointer">
               <CardHeader>
-                <div className={`w-16 h-16 ${area.color} text-white rounded-xl flex items-center justify-center mb-4`}>
+                <div className={`w-16 h-16 ${area.color} text-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <area.icon className="w-8 h-8" />
                 </div>
-                <CardTitle className="text-xl font-semibold">{area.title}</CardTitle>
+                <CardTitle className="text-xl font-semibold flex items-center justify-between">
+                  {area.title}
+                  <Badge variant="outline" className="text-xs">{area.impact}</Badge>
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">{area.description}</p>
+                <p className="text-muted-foreground leading-relaxed mb-4">{area.description}</p>
+                
+                <div className="reveal-content space-y-3">
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-muted-foreground">Publications</span>
+                    <span className="font-semibold text-primary">{area.publications}</span>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">Research Progress</span>
+                      <span className="font-semibold">{area.progress}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div 
+                        className={`h-2 rounded-full progress-bar ${area.color.replace('bg-', 'bg-gradient-to-r from-')}`}
+                        style={{ width: `${area.progress}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                  
+                  <Button variant="outline" size="sm" className="w-full mt-3 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <Eye className="w-4 h-4 mr-2" />
+                    View Details
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
