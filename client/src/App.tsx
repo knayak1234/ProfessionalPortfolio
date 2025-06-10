@@ -7,6 +7,7 @@ import { initAnimations } from "@/lib/animations";
 import { useEffect } from "react";
 import Homepage from "@/pages/homepage";
 import NotFound from "@/pages/not-found";
+import Chatbot from "@/components/chatbot";
 
 function Router() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <Chatbot />
       </TooltipProvider>
     </QueryClientProvider>
   );
