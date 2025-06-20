@@ -68,26 +68,32 @@ export default function Chatbot() {
     }
 
     // Enhanced fallback for general queries
-    return "I'm Dr. Nayak's Research Assistant with comprehensive knowledge about his experimental physics work. I can provide detailed information about:\n\n• QCD Phase Diagram and Quark-Gluon Plasma research\n• STAR and ALICE collaboration contributions\n• Breakthrough publications and discoveries\n• Teaching philosophy and current courses\n• Academic background and achievements\n• Research methodologies and techniques\n\nPlease ask specific questions about any of these areas, and I'll provide detailed, accurate information from my extensive knowledge base.";
+    return "I can help you learn about Dr. Nayak's work! Try asking about:\n\n🔬 \"What is QCD Phase Diagram research?\"\n⚛️ \"Tell me about Quark-Gluon Plasma\"\n📊 \"What are flow measurements?\"\n🏆 \"What awards has he received?\"\n📚 \"What courses does he teach?\"\n🌍 \"Tell me about CERN experience\"\n📧 \"How can I contact him?\"\n\nI have detailed information about all aspects of his academic career!";
   };
 
   // Enhanced knowledge base for fallback responses
   const getKnowledgeResponse = (query: string): string => {
     const lowerQuery = query.toLowerCase();
     
-    // Contact and collaboration responses (check first to avoid greeting fallback)
+    // Basic identity question - keep short and direct
+    if (lowerQuery.includes('who is') || lowerQuery.includes('who\'s') || 
+        (lowerQuery.includes('kishora') && lowerQuery.includes('nayak') && lowerQuery.length < 30)) {
+      return "Dr. Kishora Nayak is an Assistant Professor of Physics at Panchayat College, Bargarh (Sambalpur University, Odisha). He specializes in experimental high-energy physics, particularly QCD Phase Diagram studies and Quark-Gluon Plasma research, with international experience at CERN and collaborations with STAR and ALICE experiments.";
+    }
+
+    // Contact and collaboration responses
     if (lowerQuery.includes('collaborate') || lowerQuery.includes('collaboration') || 
         lowerQuery.includes('work with') || lowerQuery.includes('partner') ||
         lowerQuery.includes('joint research') || lowerQuery.includes('contact') || 
         lowerQuery.includes('reach') || lowerQuery.includes('email') || 
         lowerQuery.includes('phone') || lowerQuery.includes('get in touch') ||
         lowerQuery.includes('connect with')) {
-      return "Contact Dr. Kishora Nayak for collaboration or inquiries:\n\n📧 Email: k.nayak1234@gmail.com\n📞 Phone: +91 9938735081\n🏢 Address: P.G. Department of Physics\n   Panchayat College Bargarh\n   Sambalpur University, Odisha, India\n\n⏰ Office Hours:\n• Monday-Friday: 10:00 AM - 4:00 PM\n• Saturday: 10:00 AM - 1:00 PM\n\n🤝 For research collaboration, please email with:\n• Your research interests\n• Proposed collaboration area\n• Your institutional affiliation\n\nHe welcomes collaboration in QCD research, heavy-ion physics, and data analysis projects.";
+      return "Contact Dr. Nayak:\n\nEmail: k.nayak1234@gmail.com\nPhone: +91 9938735081\nOffice: P.G. Department of Physics, Panchayat College Bargarh, Sambalpur University, Odisha\n\nFor collaboration, please include your research interests and institutional affiliation. He welcomes partnerships in QCD research and heavy-ion physics.";
     }
 
     // Greeting responses
     if (lowerQuery.includes('hello') || lowerQuery.includes('hi') || lowerQuery.includes('hey')) {
-      return "Hello! I'm here to help you learn about Dr. Kishora Nayak's research in experimental physics. You can ask me about his QCD studies, publications, teaching, or any other aspect of his academic work.";
+      return "Hello! I can help you learn about Dr. Kishora Nayak's physics research, publications, teaching, and academic background. What would you like to know?";
     }
     
     // QCD and Phase Transitions - Comprehensive Coverage

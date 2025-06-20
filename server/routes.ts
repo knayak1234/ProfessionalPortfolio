@@ -136,9 +136,29 @@ Provide informative, accurate responses about Dr. Nayak's work. Be specific abou
     } catch (error) {
       console.error('Chatbot API error:', error);
       
-      // Return a helpful message directing users to the comprehensive chatbot
+      // Use the frontend knowledge base for responses
+      const message = req.body.message?.toLowerCase() || '';
+      
+      // Basic identity question
+      if (message.includes('who is') || message.includes('who\'s') || 
+          (message.includes('kishora') && message.includes('nayak') && message.length < 30)) {
+        res.json({
+          reply: "Dr. Kishora Nayak is an Assistant Professor of Physics at Panchayat College, Bargarh (Sambalpur University, Odisha). He specializes in experimental high-energy physics, particularly QCD Phase Diagram studies and Quark-Gluon Plasma research, with international experience at CERN and collaborations with STAR and ALICE experiments."
+        });
+        return;
+      }
+      
+      // Contact information
+      if (message.includes('contact') || message.includes('email') || message.includes('phone')) {
+        res.json({
+          reply: "Contact Dr. Nayak:\n\nEmail: k.nayak1234@gmail.com\nPhone: +91 9938735081\nOffice: P.G. Department of Physics, Panchayat College Bargarh, Sambalpur University, Odisha\n\nFor collaboration, please include your research interests and institutional affiliation."
+        });
+        return;
+      }
+      
+      // General fallback
       res.json({ 
-        reply: "I'm Dr. Nayak's Research Assistant! While the AI service is temporarily unavailable, I have comprehensive knowledge about his research. You can ask me about:\n\n• QCD Phase Diagram and Quark-Gluon Plasma research\n• STAR and ALICE collaboration work\n• Publications and breakthrough discoveries\n• Teaching and courses\n• Academic background and achievements\n\nTry asking specific questions about his research areas, and I'll provide detailed information from my knowledge base."
+        reply: "I can help you learn about Dr. Nayak's work! Try asking about:\n\n🔬 \"What is QCD Phase Diagram research?\"\n⚛️ \"Tell me about Quark-Gluon Plasma\"\n📊 \"What are flow measurements?\"\n🏆 \"What awards has he received?\"\n📚 \"What courses does he teach?\"\n🌍 \"Tell me about CERN experience\"\n📧 \"How can I contact him?\"\n\nI have detailed information about all aspects of his academic career!"
       });
     }
   });
