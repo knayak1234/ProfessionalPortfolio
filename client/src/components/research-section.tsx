@@ -166,27 +166,16 @@ export default function ResearchSection() {
                       {collab.icon}
                     </a>
                     <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <a
-                          href={collab.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-lg font-semibold text-foreground hover:text-primary transition-colors duration-200 cursor-pointer inline-flex items-center gap-2"
-                          title={`Visit ${collab.name} website`}
-                        >
-                          {collab.name}
-                          <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                        </a>
-                        <a
-                          href={collab.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center px-3 py-1 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-full text-xs font-medium transition-all duration-200 opacity-0 group-hover:opacity-100"
-                        >
-                          Visit Site
-                          <ExternalLink className="w-3 h-3 ml-1" />
-                        </a>
-                      </div>
+                      <a
+                        href={collab.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg font-semibold text-foreground hover:text-primary transition-colors duration-200 cursor-pointer inline-flex items-center gap-2 mb-2"
+                        title={`Visit ${collab.name} website`}
+                      >
+                        {collab.name}
+                        <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                      </a>
                       <p className="text-primary font-medium mb-3">{collab.location}</p>
                       <p className="text-muted-foreground text-sm leading-relaxed">{collab.description}</p>
                     </div>
