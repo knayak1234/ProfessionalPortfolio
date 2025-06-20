@@ -155,10 +155,27 @@ export default function ResearchSection() {
               <Card key={index} className="hover:shadow-lg transition-shadow group">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="text-3xl">{collab.icon}</div>
+                    <a
+                      href={collab.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-3xl hover:scale-110 transition-transform duration-200 cursor-pointer"
+                      title={`Visit ${collab.name} website`}
+                    >
+                      {collab.icon}
+                    </a>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-lg font-semibold text-foreground">{collab.name}</h4>
+                        <a
+                          href={collab.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-lg font-semibold text-foreground hover:text-primary transition-colors duration-200 cursor-pointer inline-flex items-center gap-2"
+                          title={`Visit ${collab.name} website`}
+                        >
+                          {collab.name}
+                          <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                        </a>
                         <a
                           href={collab.url}
                           target="_blank"
