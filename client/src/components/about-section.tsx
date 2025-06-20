@@ -202,7 +202,7 @@ export default function AboutSection() {
             
             <div className="text-center mb-8">
               <h3 className="text-3xl font-bold bg-gradient-to-r from-yellow-600 via-amber-600 to-orange-600 bg-clip-text text-transparent mb-2 font-serif">
-                Selected Recognition & Awards
+                Awards & Recognition
               </h3>
               <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto rounded-full"></div>
               <p className="text-lg text-amber-700 mt-3">Honoring excellence in experimental physics research</p>
