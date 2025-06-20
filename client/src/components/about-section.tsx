@@ -206,6 +206,21 @@ export default function AboutSection() {
               </h3>
               <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto rounded-full"></div>
               <p className="text-lg text-amber-700 mt-3">Honoring excellence in experimental physics research</p>
+              
+              {/* Award Ceremony Photo */}
+              <div className="mt-6 flex justify-center">
+                <div className="relative group">
+                  <img 
+                    src="/attached_assets/image_1750443196128.png" 
+                    alt="Award ceremony - Dr. Nayak receiving recognition"
+                    className="w-48 h-32 object-cover rounded-lg shadow-lg border-2 border-yellow-200 group-hover:border-yellow-400 transition-all duration-300 group-hover:shadow-xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-2 left-2 right-2 text-white text-xs bg-black/60 rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Award ceremony presentation
+                  </div>
+                </div>
+              </div>
             </div>
             
             <div className="space-y-6">
