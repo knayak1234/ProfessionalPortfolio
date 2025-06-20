@@ -81,7 +81,7 @@ export default function PublicationsSection() {
       year: "2025",
       talk: "Dependence of directed flow on system size and net conserved charges from quark coalescence in heavy-ion collisions",
       type: "Talk",
-      link: "https://indico.cern.ch/event/1424442/"
+      link: "https://indico.cern.ch/event/1424442/overview"
     },
     {
       title: "52nd International Symposium on Multiparticle Dynamics (ISMD 2023)",
@@ -280,7 +280,18 @@ export default function PublicationsSection() {
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center space-x-2">
                       <Presentation className="w-5 h-5 text-primary" />
-                      <h4 className="font-semibold text-foreground">{conf.title}</h4>
+                      {conf.link ? (
+                        <a 
+                          href={conf.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="font-semibold text-foreground hover:text-primary transition-colors cursor-pointer"
+                        >
+                          {conf.title}
+                        </a>
+                      ) : (
+                        <h4 className="font-semibold text-foreground">{conf.title}</h4>
+                      )}
                     </div>
                     {conf.type === "Invited" && (
                       <Badge className="bg-yellow-100 text-yellow-800 text-xs">
