@@ -72,18 +72,6 @@ export default function PublicationsSection() {
       color: "bg-green-100 text-green-800",
       doi: "https://www.nature.com/articles/nphys4111"
     },
-    {
-      title: "Enhanced production of multi-strange hadrons in high-multiplicity proton collisions",
-      authors: "ALICE Collaboration (J. Adam et al.)",
-      journal: "Nature Physics",
-      volume: "13",
-      pages: "535-539",
-      year: "2017",
-      type: "Nature Journal",
-      collaboration: "ALICE",
-      color: "bg-purple-100 text-purple-800",
-      doi: ""
-    },
   ];
 
   const recentConferences = [
