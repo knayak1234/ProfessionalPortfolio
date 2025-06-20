@@ -97,7 +97,8 @@ export default function PublicationsSection() {
       year: "2021",
       talk: "Collective flow in relativistic heavy-ion collisions (A short review on experimental results)",
       type: "Talk",
-      date: "August 23, 2021 to October 7, 2021"
+      date: "August 23, 2021 to October 7, 2021",
+      link: "https://indico.cern.ch/event/1025480"
     },
     {
       title: "XXIV DAE-BRNS High Energy Physics Symposium",
