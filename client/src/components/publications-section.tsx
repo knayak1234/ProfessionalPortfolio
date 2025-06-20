@@ -108,8 +108,7 @@ export default function PublicationsSection() {
       talk: "Directed flow of identified hadrons in Au+Au collisions with the STAR experiment at RHIC",
       type: "Talk",
       date: "December 14-18, 2020",
-      publication: "Springer Proc. Phys. 277, 381-384 (2022)",
-      link: "https://www.niser.ac.in/events/daehep2020/programs.php"
+      publication: "Springer Proc. Phys. 277, 381-384 (2022)"
     },
     {
       title: "Quark Matter 2019",
@@ -117,6 +116,7 @@ export default function PublicationsSection() {
       year: "2019",
       talk: "Directed and elliptic flow of identified hadrons, high-pT charged hadrons and light nuclei in Au+Au collisions at STAR",
       type: "Invited",
+      link: "https://indico.cern.ch/event/792436"
     },
     {
       title: "ATHIC 2018",
