@@ -89,7 +89,8 @@ export default function PublicationsSection() {
       year: "2023",
       talk: "Understanding the effect of strangeness and electric charge on the NCQ scaling of directed flow",
       type: "Talk",
-      date: "August 21-25, 2023"
+      date: "August 21-25, 2023",
+      link: "https://indico.cern.ch/event/1258038/timetable/?view=standard_numbered"
     },
     {
       title: "10th International Conference on New Frontiers in Physics (ICNFP)",
