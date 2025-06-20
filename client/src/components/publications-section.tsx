@@ -180,9 +180,11 @@ export default function PublicationsSection() {
                         </a>
                       </Button>
                     </div>
-                    <Button variant="ghost" size="sm" className="group-hover:bg-blue-50 transition-colors">
-                      <Eye className="w-4 h-4 mr-2" />
-                      View Abstract
+                    <Button variant="ghost" size="sm" asChild className="group-hover:bg-blue-50 transition-colors">
+                      <a href={pub.doi} target="_blank" rel="noopener noreferrer">
+                        <Eye className="w-4 h-4 mr-2" />
+                        View Paper
+                      </a>
                     </Button>
                   </div>
                 </CardContent>
