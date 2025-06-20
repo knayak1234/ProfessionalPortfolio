@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Users, Settings, BookOpen, Award, Quote } from "lucide-react";
+import { GraduationCap, Users, Settings, BookOpen, Award, Quote, Camera, Trophy, Star, Calendar } from "lucide-react";
 
 export default function TeachingSection() {
   const courses = [
@@ -200,6 +200,172 @@ export default function TeachingSection() {
                   </CardContent>
                 </Card>
               </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Students Achievement Section */}
+        <div className="mt-16 fade-in">
+          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center font-serif">
+            <Trophy className="w-6 h-6 inline mr-3 text-primary" />
+            Students Achievement & Moments
+          </h3>
+          
+          {/* Achievement Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <Card className="research-card hover:glow-border group">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <Award className="w-8 h-8 text-yellow-500 mr-3" />
+                  <div>
+                    <h4 className="font-semibold text-foreground">Research Excellence</h4>
+                    <p className="text-sm text-muted-foreground">Best Master's Thesis Award</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Multiple students received recognition for outstanding research contributions in experimental physics
+                </p>
+                <Badge className="bg-yellow-100 text-yellow-800 text-xs">Academic Achievement</Badge>
+              </CardContent>
+            </Card>
+            
+            <Card className="research-card hover:glow-border group">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <Star className="w-8 h-8 text-blue-500 mr-3" />
+                  <div>
+                    <h4 className="font-semibold text-foreground">Conference Presentations</h4>
+                    <p className="text-sm text-muted-foreground">International Physics Conferences</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Students presented research findings at prestigious international physics conferences
+                </p>
+                <Badge className="bg-blue-100 text-blue-800 text-xs">Research Impact</Badge>
+              </CardContent>
+            </Card>
+            
+            <Card className="research-card hover:glow-border group">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <GraduationCap className="w-8 h-8 text-green-500 mr-3" />
+                  <div>
+                    <h4 className="font-semibold text-foreground">Career Success</h4>
+                    <p className="text-sm text-muted-foreground">PhD Admissions & Jobs</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Graduates secured positions in top universities and research institutions worldwide
+                </p>
+                <Badge className="bg-green-100 text-green-800 text-xs">Career Growth</Badge>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Photo Gallery Section */}
+          <div className="bg-gradient-to-br from-gray-50 to-slate-100 rounded-2xl p-8">
+            <h4 className="text-xl font-semibold text-foreground mb-6 text-center flex items-center justify-center">
+              <Camera className="w-5 h-5 mr-2 text-primary" />
+              Memorable Moments with Students
+            </h4>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Photo Placeholder Cards */}
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <CardContent className="p-0">
+                  <div className="aspect-video bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center relative">
+                    <Camera className="w-12 h-12 text-blue-500 opacity-50" />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-sm font-medium">Graduation Ceremony 2024</span>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm font-medium text-foreground">Masters Graduation</p>
+                    <p className="text-xs text-muted-foreground">Celebrating student achievements</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <CardContent className="p-0">
+                  <div className="aspect-video bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center relative">
+                    <Camera className="w-12 h-12 text-green-500 opacity-50" />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-sm font-medium">Research Lab Sessions</span>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm font-medium text-foreground">Laboratory Work</p>
+                    <p className="text-xs text-muted-foreground">Hands-on physics experiments</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <CardContent className="p-0">
+                  <div className="aspect-video bg-gradient-to-br from-purple-100 to-violet-200 flex items-center justify-center relative">
+                    <Camera className="w-12 h-12 text-purple-500 opacity-50" />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-sm font-medium">Conference Presentations</span>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm font-medium text-foreground">Student Conferences</p>
+                    <p className="text-xs text-muted-foreground">Research presentations</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <CardContent className="p-0">
+                  <div className="aspect-video bg-gradient-to-br from-orange-100 to-amber-200 flex items-center justify-center relative">
+                    <Camera className="w-12 h-12 text-orange-500 opacity-50" />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-sm font-medium">Award Ceremonies</span>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm font-medium text-foreground">Recognition Events</p>
+                    <p className="text-xs text-muted-foreground">Student achievements</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <CardContent className="p-0">
+                  <div className="aspect-video bg-gradient-to-br from-red-100 to-rose-200 flex items-center justify-center relative">
+                    <Camera className="w-12 h-12 text-red-500 opacity-50" />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-sm font-medium">Group Discussions</span>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm font-medium text-foreground">Study Groups</p>
+                    <p className="text-xs text-muted-foreground">Collaborative learning</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <CardContent className="p-0">
+                  <div className="aspect-video bg-gradient-to-br from-teal-100 to-cyan-200 flex items-center justify-center relative">
+                    <Camera className="w-12 h-12 text-teal-500 opacity-50" />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-sm font-medium">Field Visits</span>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm font-medium text-foreground">Educational Tours</p>
+                    <p className="text-xs text-muted-foreground">Physics facilities visits</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <div className="text-center mt-6">
+              <p className="text-sm text-muted-foreground italic">
+                "Building the future of physics through dedicated mentorship and inspiring young minds"
+              </p>
             </div>
           </div>
         </div>
