@@ -6,7 +6,7 @@ export default function TeachingSection() {
   const courses = [
     { name: "Statistical Mechanics", level: "BSc/MSc", year: "2023-24, 25", semester: "Even", color: "bg-purple-500" },
     { name: "Computer Programming", level: "BSc/MSc", year: "2023-24, 25", semester: "Odd", color: "bg-orange-500" },
-    { name: "Nuclear & Particle Physics", level: "MSc", year: "2023-2024", semester: "Odd", color: "bg-blue-500" },
+    { name: "Particle Physics", level: "MSc", year: "2024-25", semester: "Even", color: "bg-blue-500" },
     { name: "Classical Mechanics", level: "BSc/MSc", year: "2023-2024", semester: "Even", color: "bg-green-500" },
     { name: "Modern Physics", level: "BSc", year: "2024", semester: "Even", color: "bg-red-500" },
     { name: "Optics", level: "BSc", year: "2023-2024", semester: "Even", color: "bg-indigo-500" },
