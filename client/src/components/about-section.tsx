@@ -235,7 +235,16 @@ export default function AboutSection() {
                         Odisha Physical Society Young Scientist Award
                       </h4>
                       
-                      <p className="text-amber-600 font-semibold mb-3">Odisha Physical Society</p>
+                      <p className="text-amber-600 font-semibold mb-3">
+                        <a 
+                          href="http://www.orissaphysicalsociety.org/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="hover:text-amber-700 transition-colors duration-300 hover:underline"
+                        >
+                          Odisha Physical Society
+                        </a>
+                      </p>
                       
                       <p className="text-gray-600 italic mb-4 leading-relaxed">
                         "Recognizing outstanding contributions to experimental physics research in QCD Phase Diagram studies and heavy-ion collision analysis"
@@ -251,11 +260,11 @@ export default function AboutSection() {
                     
                     {/* Award Photo Column */}
                     <div className="flex justify-center lg:justify-end">
-                      <div className="relative group">
+                      <div className="relative group w-full max-w-sm">
                         <img 
                           src="/attached_assets/image_1750443196128.png" 
                           alt="Award ceremony - Dr. Nayak receiving recognition"
-                          className="w-64 h-40 object-cover rounded-lg shadow-lg border-2 border-yellow-200 group-hover:border-yellow-400 transition-all duration-300 group-hover:shadow-xl"
+                          className="w-full h-56 object-cover rounded-lg shadow-lg border-2 border-yellow-200 group-hover:border-yellow-400 transition-all duration-300 group-hover:shadow-xl"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <div className="absolute bottom-2 left-2 right-2 text-white text-xs bg-black/60 rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
