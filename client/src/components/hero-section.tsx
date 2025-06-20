@@ -36,7 +36,7 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-12 lg:gap-12 items-center">
           <div className="lg:col-span-8 slide-in-left">
             <div className="flex items-center space-x-2 mb-4">
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 scale-hover pulse-glow">
+              <Badge variant="secondary" className="bg-white/30 text-white border-white/50 scale-hover pulse-glow backdrop-blur-sm font-semibold shadow-lg">
                 <Award className="w-4 h-4 mr-2" />
                 Experimental Physicist
               </Badge>
@@ -46,7 +46,7 @@ export default function HeroSection() {
               Dr. Kishora Nayak
             </h1>
             
-            <h2 className="text-xl lg:text-2xl font-light mb-6 text-blue-100 slide-in-left stagger-1">
+            <h2 className="text-xl lg:text-2xl font-light mb-6 text-white drop-shadow-lg slide-in-left stagger-1">
               Assistant Professor of Physics
             </h2>
             
@@ -56,10 +56,10 @@ export default function HeroSection() {
                 alt="Panchayat College Logo" 
                 className="h-8 w-8 object-contain rounded-full"
               />
-              <span className="text-lg">Panchayat College, Bargarh</span>
+              <span className="text-lg text-white drop-shadow-md">Panchayat College, Bargarh</span>
             </div>
             
-            <p className="text-lg mb-8 text-blue-50 leading-relaxed max-w-2xl">
+            <p className="text-lg mb-8 text-white drop-shadow-md leading-relaxed max-w-2xl">
               Experimental High-Energy and Nuclear Physicist specializing in QCD Phase Diagram research and 
               Quark-Gluon Plasma studies. Contributing to groundbreaking discoveries at RHIC and LHC through 
               STAR and ALICE collaborations.

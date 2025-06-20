@@ -236,7 +236,7 @@ html {
 
 /* Hero title gradient with white and yellow colors for dark backgrounds */
 .hero-gradient-text {
-  background: linear-gradient(-45deg, #ffffff, #fbbf24, #facc15, #fde047, #ffffff, #e2e8f0);
+  background: linear-gradient(-45deg, #ffffff, #fbbf24, #facc15, #fde047, #ffffff, #f8fafc);
   background-size: 400% 400%;
   animation: gradient 3s ease infinite;
   -webkit-background-clip: text;
@@ -244,7 +244,8 @@ html {
   background-clip: text;
   color: #ffffff; /* Fallback color for browsers that don't support background-clip */
   font-weight: 800;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 /* Ensure hero gradient text is visible on dark backgrounds */
