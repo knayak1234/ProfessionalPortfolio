@@ -92,6 +92,16 @@ export default function PublicationsSection() {
       date: "August 23, 2021 to October 7, 2021"
     },
     {
+      title: "XXIV DAE-BRNS High Energy Physics Symposium",
+      location: "NISER, India",
+      year: "2020",
+      talk: "Directed flow of identified hadrons in Au+Au collisions with the STAR experiment at RHIC",
+      type: "Talk",
+      date: "December 14-18, 2020",
+      publication: "Springer Proc. Phys. 277, 381-384 (2022)",
+      link: "https://www.niser.ac.in/events/daehep2020/programs.php"
+    },
+    {
       title: "Quark Matter 2019",
       location: "Wuhan, China",
       year: "2019",
@@ -281,9 +291,28 @@ export default function PublicationsSection() {
                     </span>
                   </div>
                   
-                  <p className="text-sm text-muted-foreground italic">
+                  <p className="text-sm text-muted-foreground italic mb-3">
                     "{conf.talk}"
                   </p>
+                  
+                  {conf.publication && (
+                    <div className="mt-3 pt-3 border-t border-gray-100">
+                      <p className="text-xs text-muted-foreground mb-2">
+                        <strong>Publication:</strong> {conf.publication}
+                      </p>
+                      {conf.link && (
+                        <a 
+                          href={conf.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-xs text-primary hover:text-primary/80 transition-colors"
+                        >
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          Conference Website
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
