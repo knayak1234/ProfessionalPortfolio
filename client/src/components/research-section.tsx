@@ -47,12 +47,14 @@ export default function ResearchSection() {
       location: "RHIC, BNL, USA",
       description: "Working on directed and elliptic flow studies of identified hadrons in Au+Au collisions to understand the medium dynamics of QGP.",
       icon: "⭐",
+      url: "https://www.star.bnl.gov",
     },
     {
       name: "ALICE Collaboration",
       location: "LHC, CERN, Switzerland",
       description: "Research on multiplicity dependence of light hadron production and high-pT resonance studies in various collision systems.",
       icon: "🔬",
+      url: "https://alice-collaboration.web.cern.ch/",
     },
   ];
 
@@ -150,12 +152,23 @@ export default function ResearchSection() {
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             {collaborations.map((collab, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="hover:shadow-lg transition-shadow group">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="text-3xl">{collab.icon}</div>
                     <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-foreground mb-2">{collab.name}</h4>
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="text-lg font-semibold text-foreground">{collab.name}</h4>
+                        <a
+                          href={collab.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-3 py-1 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-full text-xs font-medium transition-all duration-200 opacity-0 group-hover:opacity-100"
+                        >
+                          Visit Site
+                          <ExternalLink className="w-3 h-3 ml-1" />
+                        </a>
+                      </div>
                       <p className="text-primary font-medium mb-3">{collab.location}</p>
                       <p className="text-muted-foreground text-sm leading-relaxed">{collab.description}</p>
                     </div>
