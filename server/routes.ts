@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { insertContactMessageSchema } from "@shared/schema";
 import OpenAI from "openai";
 import { researchKnowledge, collaborations, keyPublications, teachingExpertise, academicBackground, recognition, researchMetrics } from "./chatbot-knowledge";
 
@@ -8,35 +9,52 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form endpoint
-  app.post("/api/contact", (req, res) => {
-    const { name, email, affiliation, subject, message } = req.body;
-    
-    // Validate required fields
-    if (!name || !email || !message) {
-      return res.status(400).json({ 
-        error: "Missing required fields",
-        required: ["name", "email", "message"]
+  app.post("/api/contact", async (req, res) => {
+    try {
+      const messageData = insertContactMessageSchema.parse(req.body);
+      
+      // Save to storage
+      const savedMessage = await storage.createContactMessage(messageData);
+      
+      console.log("Contact form submission received and saved:", {
+        id: savedMessage.id,
+        name: savedMessage.name,
+        email: savedMessage.email,
+        subject: savedMessage.subject,
+        timestamp: savedMessage.timestamp
       });
+      
+      res.json({ 
+        success: true, 
+        message: "Contact form submitted successfully" 
+      });
+    } catch (error) {
+      console.error("Contact form error:", error);
+      res.status(400).json({ error: "Invalid form data" });
     }
-    
-    // In a real implementation, this would:
-    // 1. Save to database
-    // 2. Send email notification
-    // 3. Send confirmation email to sender
-    
-    console.log("Contact form submission received:", {
-      name,
-      email,
-      affiliation,
-      subject,
-      message,
-      timestamp: new Date().toISOString()
-    });
-    
-    res.json({ 
-      success: true, 
-      message: "Contact form submitted successfully" 
-    });
+  });
+
+  // Admin endpoint to get contact messages
+  app.get("/api/admin/messages", async (req, res) => {
+    try {
+      const messages = await storage.getContactMessages();
+      res.json(messages);
+    } catch (error) {
+      console.error("Error fetching messages:", error);
+      res.status(500).json({ error: "Failed to fetch messages" });
+    }
+  });
+
+  // Admin endpoint to mark message as read
+  app.patch("/api/admin/messages/:id/read", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      await storage.markMessageAsRead(id);
+      res.json({ success: true });
+    } catch (error) {
+      console.error("Error marking message as read:", error);
+      res.status(500).json({ error: "Failed to update message" });
+    }
   });
 
   // Publications download endpoint
