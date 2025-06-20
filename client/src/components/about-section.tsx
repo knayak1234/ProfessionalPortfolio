@@ -182,25 +182,75 @@ export default function AboutSection() {
               </Card>
             </div>
             
-            {/* Awards */}
-            <div className="mt-8">
-              <h4 className="text-xl font-semibold text-foreground mb-4 flex items-center font-serif">
-                <Trophy className="w-5 h-5 mr-2 text-yellow-500" />
-                Recognition & Awards
-              </h4>
-              <Card className="bg-gradient-to-r from-yellow-50 to-orange-50 border-yellow-200">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-3">
-                    <Trophy className="w-6 h-6 text-yellow-600" />
-                    <div>
-                      <h5 className="font-semibold text-foreground">
-                        Odisha Physical Society Young Scientist Award
-                      </h5>
-                      <p className="text-sm text-muted-foreground">2024</p>
+            {/* Awards - Special Highlight */}
+            <div className="mt-12 relative">
+              {/* Decorative background elements */}
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-100/30 via-amber-100/40 to-orange-100/30 rounded-3xl blur-xl -z-10"></div>
+              <div className="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
+              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-orange-400 rounded-full opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+              
+              <div className="relative bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 border-2 border-yellow-300/50 rounded-2xl p-8 shadow-2xl">
+                <div className="absolute top-4 right-4">
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                  </div>
+                </div>
+                
+                <div className="text-center mb-6">
+                  <h4 className="text-3xl font-bold bg-gradient-to-r from-yellow-600 via-amber-600 to-orange-600 bg-clip-text text-transparent mb-2 font-serif">
+                    Recognition & Awards
+                  </h4>
+                  <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto rounded-full"></div>
+                </div>
+                
+                <Card className="bg-white/80 backdrop-blur-sm border-yellow-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                  <CardContent className="p-8">
+                    <div className="flex items-center justify-center space-x-4 mb-4">
+                      <div className="relative">
+                        <Trophy className="w-12 h-12 text-yellow-500 drop-shadow-lg" />
+                        <div className="absolute -inset-1 bg-yellow-400/30 rounded-full blur animate-pulse"></div>
+                      </div>
+                      <div className="text-center">
+                        <h5 className="text-2xl font-bold bg-gradient-to-r from-yellow-700 to-orange-700 bg-clip-text text-transparent">
+                          Odisha Physical Society
+                        </h5>
+                        <h6 className="text-xl font-semibold text-amber-600">
+                          Young Scientist Award
+                        </h6>
+                        <p className="text-lg font-medium text-orange-600 mt-2">2024</p>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center">
+                      <p className="text-gray-600 italic mb-4">
+                        "Recognizing outstanding contributions to experimental physics research"
+                      </p>
+                      <div className="flex justify-center space-x-2">
+                        <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Experimental Physics</span>
+                        <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">QCD Research</span>
+                        <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">Young Scientist</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                {/* Additional recognition */}
+                <div className="mt-6 text-center">
+                  <h6 className="text-lg font-semibold text-gray-700 mb-3">Research Funding Recognition</h6>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-yellow-200">
+                      <p className="font-medium text-gray-800">China Post-doctoral Science Foundation</p>
+                      <p className="text-sm text-gray-600">₹10,00,000 funding</p>
+                    </div>
+                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-yellow-200">
+                      <p className="font-medium text-gray-800">Mukhyamantri Research & Innovation Grant</p>
+                      <p className="text-sm text-gray-600">₹9,00,000 funding</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           </div>
         </div>
