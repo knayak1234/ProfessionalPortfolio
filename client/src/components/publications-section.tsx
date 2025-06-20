@@ -34,7 +34,7 @@ export default function PublicationsSection() {
       type: "First Author",
       collaboration: "STAR",
       color: "bg-blue-100 text-blue-800",
-      doi: ""
+      doi: "https://doi.org/10.1016/j.nuclphysa.2020.121855"
     },
     {
       title: "First observation of the directed flow of D⁰ and D̄⁰ in Au+Au collisions at √sNN = 200 GeV",
@@ -46,7 +46,7 @@ export default function PublicationsSection() {
       type: "High Impact",
       collaboration: "STAR",
       color: "bg-red-100 text-red-800",
-      doi: ""
+      doi: "https://doi.org/10.1103/PhysRevLett.123.162301"
     },
     {
       title: "Energy dependence study of directed flow in Au+Au collisions using an improved coalescence in a multiphase transport model",
@@ -58,7 +58,7 @@ export default function PublicationsSection() {
       type: "Lead Author",
       collaboration: "Theory",
       color: "bg-yellow-100 text-yellow-800",
-      doi: ""
+      doi: "https://doi.org/10.1103/PhysRevC.100.054903"
     },
     {
       title: "Enhanced production of multi-strange hadrons in high-multiplicity proton collisions",
@@ -151,9 +151,14 @@ export default function PublicationsSection() {
                     </div>
                   </div>
                   
-                  <h4 className="text-lg font-semibold text-foreground mb-3 leading-relaxed group-hover:text-primary transition-colors">
+                  <a
+                    href={pub.doi}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-lg font-semibold text-foreground mb-3 leading-relaxed hover:text-primary transition-colors cursor-pointer"
+                  >
                     "{pub.title}"
-                  </h4>
+                  </a>
                   
                   <p className="text-muted-foreground mb-4">
                     <span className="font-medium">{pub.authors}</span>
