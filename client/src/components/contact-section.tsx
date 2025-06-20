@@ -9,7 +9,6 @@ import {
   Mail, 
   Phone, 
   MapPin, 
-  Clock, 
   ExternalLink,
   Send,
   Atom,
@@ -184,30 +183,6 @@ export default function ContactSection() {
               </CardContent>
             </Card>
             
-            {/* Office Hours */}
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle className="flex items-center font-serif">
-                  <Clock className="w-5 h-5 mr-2" />
-                  Office Hours
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center py-2 border-b border-border last:border-b-0">
-                    <span className="font-medium">Monday - Friday</span>
-                    <span className="text-muted-foreground">10:00 AM - 4:00 PM</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 border-b border-border last:border-b-0">
-                    <span className="font-medium">Saturday</span>
-                    <span className="text-muted-foreground">10:00 AM - 1:00 PM</span>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground mt-4">
-                  Please email in advance to schedule appointments outside regular hours.
-                </p>
-              </CardContent>
-            </Card>
             
             {/* Research Collaboration Areas */}
             <Card>
