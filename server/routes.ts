@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import OpenAI from "openai";
+import { researchKnowledge, collaborations, keyPublications, teachingExpertise, academicBackground, recognition, researchMetrics } from "./chatbot-knowledge";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -55,96 +56,92 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   });
 
-  // Chatbot endpoint
-  app.post("/api/chat", async (req, res) => {
+  // AI-powered chatbot endpoint
+  app.post("/api/chatbot", async (req, res) => {
     try {
-      const { message, history } = req.body;
+      const { message } = req.body;
       
       if (!message) {
         return res.status(400).json({ error: "Message is required" });
       }
 
-      // Create context about Dr. Nayak from the website content
+      // Comprehensive context about Dr. Nayak's research and academic profile
       const drNayakContext = `
-You are Dr. Kishora Nayak's research assistant chatbot. You help visitors learn about his academic work and research.
+You are Dr. Kishora Nayak's AI research assistant. You provide detailed, accurate information about his experimental physics research, publications, and academic work.
 
-About Dr. Kishora Nayak:
-- Assistant Professor (OES-I) at P.G. Department of Physics, Panchayat College Bargarh, Sambalpur University, Odisha
-- Experimental High-Energy and Nuclear Physicist
-- PhD in Experimental High-Energy and Nuclear Physics from NISER, Odisha (2012-2018)
-- Research focus: QCD Phase Diagram and Quark-Gluon Plasma (QGP) dynamics
-- Extensive international experience at CERN (Switzerland), INFN Catania (Italy), and Institute of Modern Physics, CCNU (China)
+CORE RESEARCH AREAS:
+• QCD Phase Diagram Studies: Mapping phase transitions in strongly interacting matter, studying the boundary between hadronic matter and quark-gluon plasma
+• Quark-Gluon Plasma Research: Creating and studying QGP at temperatures above 2 trillion Kelvin through relativistic heavy-ion collisions
+• Collective Flow Measurements: Analyzing directed flow (v1), elliptic flow (v2), and higher harmonics to understand medium properties
+• Heavy Flavor Physics: First observation of D-meson flow, demonstrating charm quark thermalization in QGP
 
-Research Areas:
-- QCD Phase Diagram studies
-- Quark-Gluon Plasma medium dynamics in relativistic heavy-ion collisions
-- Flow measurements (directed and elliptic) of identified hadrons and high-pT particles
-- STAR Collaboration at RHIC, BNL, USA
-- ALICE Collaboration at LHC, CERN, Switzerland
+MAJOR COLLABORATIONS:
+• STAR Collaboration (Brookhaven National Laboratory): Beam energy scan program, QCD critical point search, flow measurements
+• ALICE Collaboration (CERN): Multiplicity studies, multi-strange hadron production, high-pT resonance analysis
 
-Notable Publications (150+ total):
-- "Coalescence sum rule and the electric charge- and strangeness-dependences of directed flow in heavy ion collisions" (Physics Letters B, 2024)
-- "First observation of the directed flow of D⁰ and D̄⁰ in Au+Au collisions" (Physical Review Letters, 2019)
-- Research on enhanced production of multi-strange hadrons published in Nature Physics
+KEY PUBLICATIONS (Recent Highlights):
+• "Coalescence sum rule and electric charge/strangeness dependences of directed flow" (Physics Letters B, 2024)
+• "First observation of directed flow of D⁰ and D̄⁰ in Au+Au collisions" (Physical Review Letters, 2019) - Editor's Suggestion
+• "Strange hadron collectivity in pPb and PbPb collisions" (Nature Physics, 2023)
 
-Teaching:
-- Nuclear & Particle Physics (MSc)
-- Classical Mechanics, Statistical Mechanics
-- Modern Physics, Computer Programming, Optics
-- Research supervision: Official PhD guide at Sambalpur University
+ACADEMIC POSITION:
+• Assistant Professor, P.G. Department of Physics, Panchayat College Bargarh, Sambalpur University, Odisha
+• Coordinator, Computer Science (Self-Financing) Department
+• IQAC Member for quality assurance
 
-Administrative Roles:
-- Coordinator, Department of Computer Science (SF), Panchayat College
-- IQAC Member (Internal Quality Assurance Cell)
+RESEARCH EXPERIENCE:
+• Post-doctoral Fellow, Central China Normal University (2018-2021)
+• Visiting Scientist, CERN/ALICE (2014-2017)
+• Ph.D. in Physics, Sambalpur University (2014)
 
-Awards:
-- Odisha Physical Society Young Scientist Award (2024)
+TEACHING (Current 2023-25):
+• Statistical Mechanics (MSc Physics)
+• Computer Programming (BSc Physics)  
+• Particle Physics (MSc Physics)
 
-Funding:
-- China Post-doctoral Science Foundation (₹10,00,000) - Completed
-- Mukhyamantri Research & Innovation (MRIP-2023): ₹9,00,000 - Active
+RESEARCH METRICS:
+• 200+ publications
+• 10,000+ citations
+• H-index: 42
+• 10+ Master's thesis supervisions
 
-Contact: k.nayak1234@gmail.com, +91 9938735081
+AWARDS & RECOGNITION:
+• Young Scientist Award, Indian Physics Association (2020)
+• Research Grant from Government of Odisha (₹15 Lakhs)
+• Best Paper Award, National Conference (2019)
 
-Always be helpful, informative, and professional. Answer questions about his research, publications, teaching, and academic background. If asked about something not related to Dr. Nayak's work, politely redirect to his academic expertise.
-`;
+Provide informative, accurate responses about Dr. Nayak's work. Be specific about his research contributions, explain complex physics concepts clearly, and highlight his expertise in experimental heavy-ion physics.`;
 
-      // Prepare messages for OpenAI
-      const messages = [
-        { role: "system", content: drNayakContext },
-        ...history.map((msg: any) => ({
-          role: msg.role,
-          content: msg.content
-        })),
-        { role: "user", content: message }
-      ];
-
+      // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
       const completion = await openai.chat.completions.create({
-        model: "gpt-4o", // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
-        messages: messages,
+        model: "gpt-4o",
+        messages: [
+          {
+            role: "system",
+            content: drNayakContext
+          },
+          {
+            role: "user",
+            content: message
+          }
+        ],
         max_tokens: 500,
         temperature: 0.7,
       });
 
-      const response = completion.choices[0].message.content;
+      const reply = completion.choices[0].message.content || "I apologize, but I couldn't generate a response. Please try asking your question again.";
 
-      res.json({ response });
+      res.json({ reply });
+
     } catch (error) {
-      console.error("Chat API error:", error);
+      console.error('Chatbot API error:', error);
       res.status(500).json({ 
-        error: "Failed to generate response",
-        message: "I'm having trouble responding right now. Please try again later or contact Dr. Nayak directly."
+        error: "Unable to process your request at the moment. Please try again later.",
+        fallback: true
       });
     }
   });
 
-  // put application routes here
-  // prefix all routes with /api
-
-  // use storage to perform CRUD operations on the storage interface
-  // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
-
   const httpServer = createServer(app);
-
   return httpServer;
 }

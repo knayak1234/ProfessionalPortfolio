@@ -39,13 +39,20 @@ export default function Chatbot() {
   // AI-powered response using OpenAI API
   const getAIResponse = async (query: string): Promise<string> => {
     try {
-      const response = await apiRequest({
-        url: '/api/chatbot',
+      const response = await fetch('/api/chatbot', {
         method: 'POST',
-        body: { message: query }
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: query }),
       });
-      
-      return response.reply;
+
+      if (!response.ok) {
+        throw new Error('Failed to get AI response');
+      }
+
+      const data = await response.json();
+      return data.reply;
     } catch (error) {
       console.error('Error getting AI response:', error);
       return getKnowledgeResponse(query); // Fallback to local knowledge
