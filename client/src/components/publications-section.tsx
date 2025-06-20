@@ -124,6 +124,7 @@ export default function PublicationsSection() {
       year: "2018",
       talk: "Using AMPT study: The directed flow in Au+Au collisions at 7.7-200 GeV",
       type: "Talk",
+      link: "https://indico.ihep.ac.cn/event/8180/timetable/?view=standard"
     },
   ];
 
