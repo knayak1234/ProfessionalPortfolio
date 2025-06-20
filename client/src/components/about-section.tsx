@@ -181,87 +181,87 @@ export default function AboutSection() {
                 </CardContent>
               </Card>
             </div>
-            
-            {/* Selected Recognition & Awards */}
-            <div className="mt-12 relative">
-              {/* Decorative background elements */}
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-100/30 via-amber-100/40 to-orange-100/30 rounded-3xl blur-xl -z-10"></div>
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
-              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-orange-400 rounded-full opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
-              
-              <div className="relative bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 border-2 border-yellow-300/50 rounded-2xl p-8 shadow-2xl">
-                <div className="absolute top-4 right-4">
-                  <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                  </div>
-                </div>
-                
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold bg-gradient-to-r from-yellow-600 via-amber-600 to-orange-600 bg-clip-text text-transparent mb-2 font-serif">
-                    Selected Recognition & Awards
-                  </h3>
-                  <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto rounded-full"></div>
-                  <p className="text-lg text-amber-700 mt-3">Honoring excellence in experimental physics research</p>
-                </div>
-                
-                <div className="space-y-6">
-                  <Card className="bg-white/80 backdrop-blur-sm border-yellow-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group">
-                    <CardContent className="p-8">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center space-x-3">
-                          <div className="relative">
-                            <Trophy className="w-8 h-8 text-yellow-500 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
-                            <div className="absolute -inset-1 bg-yellow-400/30 rounded-full blur animate-pulse"></div>
-                          </div>
-                          <div>
-                            <Badge className="bg-yellow-100 text-yellow-800 px-3 py-1 text-sm font-semibold">Distinguished Award</Badge>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <div className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-bold text-sm rounded-full shadow-md">
-                            2024
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <h4 className="text-2xl font-bold bg-gradient-to-r from-yellow-700 to-orange-700 bg-clip-text text-transparent mb-2">
-                        Odisha Physical Society Young Scientist Award
-                      </h4>
-                      
-                      <p className="text-amber-600 font-semibold mb-3">Odisha Physical Society</p>
-                      
-                      <p className="text-gray-600 italic mb-4 leading-relaxed">
-                        "Recognizing outstanding contributions to experimental physics research in QCD Phase Diagram studies and heavy-ion collision analysis"
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-2">
-                        <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Experimental Physics</span>
-                        <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">QCD Research</span>
-                        <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">Young Scientist Excellence</span>
-                        <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Heavy-Ion Physics</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  
-                  {/* Additional Recognition Placeholder */}
-                  <Card className="bg-white/60 backdrop-blur-sm border-yellow-200/40 shadow-lg hover:shadow-xl transition-all duration-300 opacity-70">
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-3">
-                          <Award className="w-6 h-6 text-amber-500" />
-                          <div>
-                            <h5 className="font-semibold text-amber-700">Research Excellence Recognition</h5>
-                            <p className="text-sm text-amber-600">Ongoing contributions to international collaborations</p>
-                          </div>
-                        </div>
-                        <Badge variant="outline" className="text-amber-600 border-amber-300">Continuous</Badge>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+          </div>
+        </div>
+        
+        {/* Selected Recognition & Awards - Full Width */}
+        <div className="mb-16 relative">
+          {/* Decorative background elements */}
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-100/30 via-amber-100/40 to-orange-100/30 rounded-3xl blur-xl -z-10"></div>
+          <div className="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-orange-400 rounded-full opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+          
+          <div className="relative bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 border-2 border-yellow-300/50 rounded-2xl p-8 shadow-2xl">
+            <div className="absolute top-4 right-4">
+              <div className="flex space-x-1">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
               </div>
+            </div>
+            
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-yellow-600 via-amber-600 to-orange-600 bg-clip-text text-transparent mb-2 font-serif">
+                Selected Recognition & Awards
+              </h3>
+              <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto rounded-full"></div>
+              <p className="text-lg text-amber-700 mt-3">Honoring excellence in experimental physics research</p>
+            </div>
+            
+            <div className="space-y-6">
+              <Card className="bg-white/80 backdrop-blur-sm border-yellow-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group">
+                <CardContent className="p-8">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="relative">
+                        <Trophy className="w-8 h-8 text-yellow-500 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
+                        <div className="absolute -inset-1 bg-yellow-400/30 rounded-full blur animate-pulse"></div>
+                      </div>
+                      <div>
+                        <Badge className="bg-yellow-100 text-yellow-800 px-3 py-1 text-sm font-semibold">Distinguished Award</Badge>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-bold text-sm rounded-full shadow-md">
+                        2024
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <h4 className="text-2xl font-bold bg-gradient-to-r from-yellow-700 to-orange-700 bg-clip-text text-transparent mb-2">
+                    Odisha Physical Society Young Scientist Award
+                  </h4>
+                  
+                  <p className="text-amber-600 font-semibold mb-3">Odisha Physical Society</p>
+                  
+                  <p className="text-gray-600 italic mb-4 leading-relaxed">
+                    "Recognizing outstanding contributions to experimental physics research in QCD Phase Diagram studies and heavy-ion collision analysis"
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Experimental Physics</span>
+                    <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">QCD Research</span>
+                    <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">Young Scientist Excellence</span>
+                    <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Heavy-Ion Physics</span>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Additional Recognition Placeholder */}
+              <Card className="bg-white/60 backdrop-blur-sm border-yellow-200/40 shadow-lg hover:shadow-xl transition-all duration-300 opacity-70">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <Award className="w-6 h-6 text-amber-500" />
+                      <div>
+                        <h5 className="font-semibold text-amber-700">Research Excellence Recognition</h5>
+                        <p className="text-sm text-amber-600">Ongoing contributions to international collaborations</p>
+                      </div>
+                    </div>
+                    <Badge variant="outline" className="text-amber-600 border-amber-300">Continuous</Badge>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
