@@ -5,10 +5,10 @@ import { BookOpen, Users, Award, ExternalLink, Globe, Presentation, Calendar, Gr
 
 export default function PublicationsSection() {
   const publicationStats = [
-    { number: "150+", label: "Total Publications", icon: BookOpen, color: "from-blue-500 to-blue-600", impact: "High" },
+    { number: "200+", label: "Total Publications", icon: BookOpen, color: "from-blue-500 to-blue-600", impact: "High" },
+    { number: "10K+", label: "Total Citations", icon: TrendingUp, color: "from-green-500 to-green-600", impact: "Research Impact" },
     { number: "16", label: "Conference Papers", icon: Presentation, color: "from-purple-500 to-purple-600", impact: "International" },
     { number: "11", label: "Invited Talks", icon: Globe, color: "from-orange-500 to-orange-600", impact: "Global" },
-    { number: "2.5K+", label: "Total Citations", icon: TrendingUp, color: "from-green-500 to-green-600", impact: "Research Impact" },
   ];
 
   const selectedPublications = [

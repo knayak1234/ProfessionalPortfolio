@@ -35,8 +35,6 @@ export default function ResearchSection() {
   ];
 
   const researchStats = [
-    { number: "200+", label: "Total Publications", icon: Target, color: "from-blue-500 to-blue-600" },
-    { number: "10K+", label: "Total Citations", icon: Eye, color: "from-red-500 to-red-600" },
     { number: "5+", label: "Years Experience", icon: TrendingUp, color: "from-green-500 to-green-600" },
     { number: "2", label: "Major Collaborations", icon: Users, color: "from-purple-500 to-purple-600" },
     { number: "₹19L", label: "Research Funding", icon: DollarSign, color: "from-orange-500 to-orange-600" },
