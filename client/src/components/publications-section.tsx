@@ -76,6 +76,14 @@ export default function PublicationsSection() {
 
   const recentConferences = [
     {
+      title: "10th Asian Triangle Heavy-Ion Conference (ATHIC 2025)",
+      location: "IISER, Berhampur, India",
+      year: "2025",
+      talk: "Dependence of directed flow on system size and net conserved charges from quark coalescence in heavy-ion collisions",
+      type: "Talk",
+      link: "https://indico.cern.ch/event/1424442/"
+    },
+    {
       title: "52nd International Symposium on Multiparticle Dynamics (ISMD 2023)",
       location: "Károly Róbert Campus of MATE in Gyöngyös, Hungary",
       year: "2023",
