@@ -68,6 +68,7 @@ export default function ResearchSection() {
     },
     {
       title: "Mukhyamantri Research & Innovation (MRI)",
+      organization: "Government of Odisha",
       grantId: "MRIP-2023 (23EM/PH/124)",
       amount: "₹9,00,000",
       status: "Active",
@@ -208,6 +209,9 @@ export default function ResearchSection() {
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <h4 className="font-semibold text-foreground mb-2">{grant.title}</h4>
+                      {grant.organization && (
+                        <p className="text-sm text-primary font-medium mb-1">{grant.organization}</p>
+                      )}
                       <p className="text-sm text-muted-foreground mb-2">Grant ID: {grant.grantId}</p>
                       <p className="text-lg font-semibold text-primary">{grant.amount}</p>
                     </div>
