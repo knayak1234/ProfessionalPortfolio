@@ -135,9 +135,10 @@ Provide informative, accurate responses about Dr. Nayak's work. Be specific abou
 
     } catch (error) {
       console.error('Chatbot API error:', error);
-      res.status(500).json({ 
-        error: "Unable to process your request at the moment. Please try again later.",
-        fallback: true
+      
+      // Return a helpful message directing users to the comprehensive chatbot
+      res.json({ 
+        reply: "I'm Dr. Nayak's Research Assistant! While the AI service is temporarily unavailable, I have comprehensive knowledge about his research. You can ask me about:\n\n• QCD Phase Diagram and Quark-Gluon Plasma research\n• STAR and ALICE collaboration work\n• Publications and breakthrough discoveries\n• Teaching and courses\n• Academic background and achievements\n\nTry asking specific questions about his research areas, and I'll provide detailed information from my knowledge base."
       });
     }
   });

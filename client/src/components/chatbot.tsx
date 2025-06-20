@@ -38,7 +38,7 @@ export default function Chatbot() {
 
   // Enhanced response system with comprehensive knowledge base
   const getEnhancedResponse = async (query: string): Promise<string> => {
-    // First try the comprehensive knowledge base
+    // Always use the comprehensive knowledge base first
     const knowledgeResponse = getKnowledgeResponse(query);
     
     // If knowledge base has a specific response, use it
@@ -46,7 +46,7 @@ export default function Chatbot() {
       return knowledgeResponse;
     }
 
-    // For general queries, try AI if available, otherwise use enhanced fallback
+    // For general queries, try AI enhancement, but don't fail if unavailable
     try {
       const response = await fetch('/api/chatbot', {
         method: 'POST',
@@ -58,13 +58,17 @@ export default function Chatbot() {
 
       if (response.ok) {
         const data = await response.json();
-        return data.reply;
+        // If AI provides a meaningful response beyond fallback message, use it
+        if (data.reply && !data.reply.includes("temporarily unavailable")) {
+          return data.reply;
+        }
       }
     } catch (error) {
-      console.log('AI service not available, using knowledge base');
+      // Silently fall back to knowledge base
     }
 
-    return knowledgeResponse;
+    // Enhanced fallback for general queries
+    return "I'm Dr. Nayak's Research Assistant with comprehensive knowledge about his experimental physics work. I can provide detailed information about:\n\n• QCD Phase Diagram and Quark-Gluon Plasma research\n• STAR and ALICE collaboration contributions\n• Breakthrough publications and discoveries\n• Teaching philosophy and current courses\n• Academic background and achievements\n• Research methodologies and techniques\n\nPlease ask specific questions about any of these areas, and I'll provide detailed, accurate information from my extensive knowledge base.";
   };
 
   // Enhanced knowledge base for fallback responses
