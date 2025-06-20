@@ -206,58 +206,63 @@ export default function AboutSection() {
               </h3>
               <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto rounded-full"></div>
               <p className="text-lg text-amber-700 mt-3">Honoring excellence in experimental physics research</p>
-              
-              {/* Award Ceremony Photo */}
-              <div className="mt-6 flex justify-center">
-                <div className="relative group">
-                  <img 
-                    src="/attached_assets/image_1750443196128.png" 
-                    alt="Award ceremony - Dr. Nayak receiving recognition"
-                    className="w-48 h-32 object-cover rounded-lg shadow-lg border-2 border-yellow-200 group-hover:border-yellow-400 transition-all duration-300 group-hover:shadow-xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-2 left-2 right-2 text-white text-xs bg-black/60 rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Award ceremony presentation
-                  </div>
-                </div>
-              </div>
             </div>
             
             <div className="space-y-6">
               <Card className="bg-white/80 backdrop-blur-sm border-yellow-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group">
                 <CardContent className="p-8">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="relative">
-                        <Trophy className="w-8 h-8 text-yellow-500 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
-                        <div className="absolute -inset-1 bg-yellow-400/30 rounded-full blur animate-pulse"></div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    {/* Award Details Column */}
+                    <div className="space-y-4">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center space-x-3">
+                          <div className="relative">
+                            <Trophy className="w-8 h-8 text-yellow-500 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
+                            <div className="absolute -inset-1 bg-yellow-400/30 rounded-full blur animate-pulse"></div>
+                          </div>
+                          <div>
+                            <Badge className="bg-yellow-100 text-yellow-800 px-3 py-1 text-sm font-semibold">Distinguished Award</Badge>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-bold text-sm rounded-full shadow-md">
+                            2024
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <Badge className="bg-yellow-100 text-yellow-800 px-3 py-1 text-sm font-semibold">Distinguished Award</Badge>
+                      
+                      <h4 className="text-2xl font-bold bg-gradient-to-r from-yellow-700 to-orange-700 bg-clip-text text-transparent mb-2">
+                        Odisha Physical Society Young Scientist Award
+                      </h4>
+                      
+                      <p className="text-amber-600 font-semibold mb-3">Odisha Physical Society</p>
+                      
+                      <p className="text-gray-600 italic mb-4 leading-relaxed">
+                        "Recognizing outstanding contributions to experimental physics research in QCD Phase Diagram studies and heavy-ion collision analysis"
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Experimental Physics</span>
+                        <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">QCD Research</span>
+                        <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">Young Scientist Excellence</span>
+                        <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Heavy-Ion Physics</span>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-bold text-sm rounded-full shadow-md">
-                        2024
+                    
+                    {/* Award Photo Column */}
+                    <div className="flex justify-center lg:justify-end">
+                      <div className="relative group">
+                        <img 
+                          src="/attached_assets/image_1750443196128.png" 
+                          alt="Award ceremony - Dr. Nayak receiving recognition"
+                          className="w-64 h-40 object-cover rounded-lg shadow-lg border-2 border-yellow-200 group-hover:border-yellow-400 transition-all duration-300 group-hover:shadow-xl"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute bottom-2 left-2 right-2 text-white text-xs bg-black/60 rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          Award ceremony presentation
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  <h4 className="text-2xl font-bold bg-gradient-to-r from-yellow-700 to-orange-700 bg-clip-text text-transparent mb-2">
-                    Odisha Physical Society Young Scientist Award
-                  </h4>
-                  
-                  <p className="text-amber-600 font-semibold mb-3">Odisha Physical Society</p>
-                  
-                  <p className="text-gray-600 italic mb-4 leading-relaxed">
-                    "Recognizing outstanding contributions to experimental physics research in QCD Phase Diagram studies and heavy-ion collision analysis"
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Experimental Physics</span>
-                    <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">QCD Research</span>
-                    <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">Young Scientist Excellence</span>
-                    <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Heavy-Ion Physics</span>
                   </div>
                 </CardContent>
               </Card>
