@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, X, Send, Bot, User, Minimize2, Maximize2, Zap } from "lucide-react";
+import { apiRequest } from "@/lib/queryClient";
 
 interface Message {
   id: string;
@@ -35,7 +36,23 @@ export default function Chatbot() {
     scrollToBottom();
   }, [messages]);
 
-  // Enhanced knowledge base for more specific responses
+  // AI-powered response using OpenAI API
+  const getAIResponse = async (query: string): Promise<string> => {
+    try {
+      const response = await apiRequest({
+        url: '/api/chatbot',
+        method: 'POST',
+        body: { message: query }
+      });
+      
+      return response.reply;
+    } catch (error) {
+      console.error('Error getting AI response:', error);
+      return getKnowledgeResponse(query); // Fallback to local knowledge
+    }
+  };
+
+  // Enhanced knowledge base for fallback responses
   const getKnowledgeResponse = (query: string): string => {
     const lowerQuery = query.toLowerCase();
     
@@ -147,26 +164,11 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: currentInput,
-          history: messages.slice(-5)
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to get response');
-      }
-
-      const data = await response.json();
+      const aiResponse = await getAIResponse(currentInput);
       
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: data.response,
+        content: aiResponse,
         role: 'assistant',
         timestamp: new Date()
       };
