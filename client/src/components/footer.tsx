@@ -112,9 +112,10 @@ export default function Footer() {
             <p>
               © 2024 Dr. Kishora Nayak. All rights reserved.
             </p>
-            <p className="mt-2 md:mt-0">
-              Assistant Professor of Physics, Panchayat College | Last updated: January 2024
-            </p>
+            <div className="flex items-center gap-4 mt-2 md:mt-0">
+              <p>Assistant Professor of Physics, Panchayat College | Last updated: January 2024</p>
+              <a href="/admin" className="text-gray-500 hover:text-gray-300 text-xs">Admin</a>
+            </div>
           </div>
         </div>
       </div>
