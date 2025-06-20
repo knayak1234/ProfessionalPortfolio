@@ -62,6 +62,18 @@ export default function PublicationsSection() {
     },
     {
       title: "Enhanced production of multi-strange hadrons in high-multiplicity proton collisions",
+      authors: "J. Adam et al. (ALICE Collaboration)",
+      journal: "Nature Physics",
+      volume: "13",
+      pages: "535-539",
+      year: "2017",
+      type: "High Impact",
+      collaboration: "ALICE",
+      color: "bg-green-100 text-green-800",
+      doi: "https://www.nature.com/articles/nphys4111"
+    },
+    {
+      title: "Enhanced production of multi-strange hadrons in high-multiplicity proton collisions",
       authors: "ALICE Collaboration (J. Adam et al.)",
       journal: "Nature Physics",
       volume: "13",
@@ -173,18 +185,12 @@ export default function PublicationsSection() {
 
                   <div className="reveal-content flex items-center justify-between pt-3 border-t border-gray-100">
                     <div className="flex items-center space-x-4">
-                      <Button variant="outline" size="sm" className="group-hover:bg-primary group-hover:text-white transition-colors">
-                        <Quote className="w-4 h-4 mr-2" />
-                        Cite
+                      <Button variant="outline" size="sm" asChild className="group-hover:bg-primary group-hover:text-white transition-colors">
+                        <a href={pub.doi} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          DOI
+                        </a>
                       </Button>
-                      {pub.doi && (
-                        <Button variant="outline" size="sm" asChild>
-                          <a href={pub.doi} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            DOI
-                          </a>
-                        </Button>
-                      )}
                     </div>
                     <Button variant="ghost" size="sm" className="group-hover:bg-blue-50 transition-colors">
                       <Eye className="w-4 h-4 mr-2" />
