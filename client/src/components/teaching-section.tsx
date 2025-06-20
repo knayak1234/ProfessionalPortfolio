@@ -67,7 +67,7 @@ export default function TeachingSection() {
                           <h4 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors">{course.name}</h4>
                           <div className="flex items-center space-x-2 mt-1">
                             <Badge variant="outline" className="text-xs">{course.level}</Badge>
-                            <Badge variant={course.semester === "Odd" ? "default" : "secondary"} className="text-xs">
+                            <Badge variant="default" className="text-xs">
                               {course.semester} Semester
                             </Badge>
                           </div>
