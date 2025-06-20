@@ -206,50 +206,44 @@ export default function AboutSection() {
                 </div>
                 
                 <Card className="bg-white/80 backdrop-blur-sm border-yellow-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                  <CardContent className="p-8">
-                    <div className="flex items-center justify-center space-x-4 mb-4">
-                      <div className="relative">
-                        <Trophy className="w-12 h-12 text-yellow-500 drop-shadow-lg" />
-                        <div className="absolute -inset-1 bg-yellow-400/30 rounded-full blur animate-pulse"></div>
+                  <CardContent className="p-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                      {/* Left side - Trophy and glow effect */}
+                      <div className="flex justify-center lg:justify-end">
+                        <div className="relative">
+                          <Trophy className="w-20 h-20 text-yellow-500 drop-shadow-2xl" />
+                          <div className="absolute -inset-2 bg-yellow-400/30 rounded-full blur-lg animate-pulse"></div>
+                          <div className="absolute -inset-4 bg-gradient-to-r from-yellow-300/20 to-orange-300/20 rounded-full blur-xl"></div>
+                        </div>
                       </div>
-                      <div className="text-center">
-                        <h5 className="text-2xl font-bold bg-gradient-to-r from-yellow-700 to-orange-700 bg-clip-text text-transparent">
+                      
+                      {/* Center - Award details */}
+                      <div className="text-center lg:col-span-1">
+                        <h5 className="text-3xl font-bold bg-gradient-to-r from-yellow-700 to-orange-700 bg-clip-text text-transparent mb-2">
                           Odisha Physical Society
                         </h5>
-                        <h6 className="text-xl font-semibold text-amber-600">
+                        <h6 className="text-2xl font-semibold text-amber-600 mb-3">
                           Young Scientist Award
                         </h6>
-                        <p className="text-lg font-medium text-orange-600 mt-2">2024</p>
+                        <div className="inline-block px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-bold text-lg rounded-full shadow-lg">
+                          2024
+                        </div>
                       </div>
-                    </div>
-                    
-                    <div className="text-center">
-                      <p className="text-gray-600 italic mb-4">
-                        "Recognizing outstanding contributions to experimental physics research"
-                      </p>
-                      <div className="flex justify-center space-x-2">
-                        <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Experimental Physics</span>
-                        <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">QCD Research</span>
-                        <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">Young Scientist</span>
+                      
+                      {/* Right side - Description and tags */}
+                      <div className="text-center lg:text-left">
+                        <p className="text-gray-600 italic text-lg mb-6 leading-relaxed">
+                          "Recognizing outstanding contributions to experimental physics research in QCD and heavy-ion collision studies"
+                        </p>
+                        <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+                          <span className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium shadow-sm">Experimental Physics</span>
+                          <span className="px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium shadow-sm">QCD Research</span>
+                          <span className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium shadow-sm">Young Scientist</span>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
-                
-                {/* Additional recognition */}
-                <div className="mt-6 text-center">
-                  <h6 className="text-lg font-semibold text-gray-700 mb-3">Research Funding Recognition</h6>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-yellow-200">
-                      <p className="font-medium text-gray-800">China Post-doctoral Science Foundation</p>
-                      <p className="text-sm text-gray-600">₹10,00,000 funding</p>
-                    </div>
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-yellow-200">
-                      <p className="font-medium text-gray-800">Mukhyamantri Research & Innovation Grant</p>
-                      <p className="text-sm text-gray-600">₹9,00,000 funding</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
